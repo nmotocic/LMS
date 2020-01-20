@@ -141,8 +141,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\BookController.cs" />
     <Compile Include="Domain\Enums\EStatus.cs" />
+    <Compile Include="Domain\IBookPresenter.cs" />
     <Compile Include="Domain\Repositories\IBookRepository.cs" />
     <Compile Include="Domain\Repositories\IUserRepository.cs" />
     <Compile Include="Domain\Repositories\ILoanRepository.cs" />
@@ -151,7 +151,9 @@
     <Compile Include="Domain\Services\IUserService.cs" />
     <Compile Include="Domain\Services\ILoanService.cs" />
     <Compile Include="Domain\Services\IReservationService.cs" />
-    <Compile Include="Domain\ViewModels\IBookViewModel.cs" />
+    <Compile Include="Domain\ViewModels\BooksViewModel.cs" />
+    <Compile Include="Domain\ViewModels\BookViewModel.cs" />
+    <Compile Include="Presenters\BookPresenter.cs" />
     <Compile Include="Views\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>

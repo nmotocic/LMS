@@ -1,16 +1,12 @@
 ﻿using LMS.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using LMS.Domain.ViewModels;
 
 namespace LMS.Domain.Repositories
 {
     public interface IUserRepository
     {
         User GetByID(int id);
-        IEnumerable<User> GetAll();
+        UsersViewModel GetAll();
 
         void Add(User newUser);
         void Update(User user);

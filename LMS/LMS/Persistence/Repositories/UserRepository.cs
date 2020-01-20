@@ -1,17 +1,22 @@
 ﻿using LMS.Domain.Models;
 using LMS.Domain.Repositories;
+using LMS.Domain.ViewModels;
 using LMS.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
 
 namespace LMS.Persistence.Repositories
 {
-    public class UserRepository : BaseRepository, IUserRepository
+    public class UserRepository :  IUserRepository
     {
-        public UserRepository(LibraryContext context) : base(context)
+        protected static LibraryContext _context = new LibraryContext();
+        public UserRepository(LibraryContext context)
         {
+            _context = context;
         }
+        
 
         public void Add(User newUser)
         {
@@ -24,9 +29,20 @@ namespace LMS.Persistence.Repositories
             _context.User.Remove(user);
         }
 
-        public IEnumerable<User> GetAll()
+        public UsersViewModel GetAll()
         {
-            return _context.User;
+            var query = _context.User.AsNoTracking();
+            var users = query.Select(user => new UserViewModel
+            {
+                User_ID = user.Id,
+                Name = user.Name,
+                Surname = user.Surname,
+                Email = user.Email,
+                Phone = user.Phone,
+                Username = user.Username
+            }).ToList();
+            var model = new UsersViewModel { Users = users };
+            return model;
         }
 
         public User GetByID(int id)

@@ -1,4 +1,5 @@
 ﻿using LMS.Domain.Models;
+using LMS.Domain.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace LMS.Domain.Repositories
     public interface IBookRepository
     {
         Book GetByID(int id);
-        IEnumerable<Book> GetAll();
+        BooksViewModel GetAll();
 
         void Add(Book newBook);
         void Update(Book book);

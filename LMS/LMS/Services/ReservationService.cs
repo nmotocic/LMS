@@ -47,10 +47,10 @@ namespace LMS.Services
             switch (newStatus)
             {
                 case "Avaliable":
-                    book.Status = EStatus.AVALIABLE;
+                    book.Status.Equals("AVALIABLE");
                     break;
                 case "Reserved":
-                    book.Status = EStatus.RESERVED;
+                    book.Status.Equals("RESERVED");
                     break;
             }
         }

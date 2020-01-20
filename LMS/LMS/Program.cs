@@ -1,4 +1,6 @@
-﻿using LMS.Views;
+﻿using LMS.Persistence.Repositories;
+using LMS.Presenters;
+using LMS.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +17,13 @@ namespace LMS
         [STAThread]
         static void Main()
         {
+
+            BookPresenter bookPresenter = new BookPresenter(BookRepository.getInstance());
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            //Application.Run(new LoginForm());
+            Application.Run(new BookCatalogForm(bookPresenter));
         }
     }
 }

@@ -10,7 +10,7 @@ namespace LMS.Domain.Repositories
     public interface ILoanRepository
     {
         Loan GetById(int loanID);
-        IEnumerable<Loan> GetAll();
+        LoansViewModel GetAll();
 
         void Add(Loan newLoan);
         void Update(Loan loan);

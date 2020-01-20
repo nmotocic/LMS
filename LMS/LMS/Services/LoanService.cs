@@ -1,4 +1,4 @@
-﻿using LMS.Domain.Enums;
+﻿
 using LMS.Domain.Models;
 using LMS.Domain.Repositories;
 using LMS.Domain.Services;
@@ -33,7 +33,7 @@ namespace LMS.Services
             var now = DateTime.Now;
             var book = _bookRepository.GetByID(bookId);
 
-            var currentStatus = _loanRepository.GetAll().Where(l => l.Book.Status == EStatus.UNAVALIABLE);
+            var currentStatus = _loanRepository.GetAll().Where(l => l.Book.Status.Equals("UNAVALIABLE"));
 
             //TO DO: figure this out
             if (currentStatus.Any()) {
@@ -52,10 +52,10 @@ namespace LMS.Services
             switch (newStatus)
             {
                 case "Avaliable":
-                    book.Status = EStatus.AVALIABLE;
+                    book.Status.Equals("AVALIABLE");
                     break;
                 case "Unavaliable":
-                    book.Status = EStatus.UNAVALIABLE;
+                    book.Status.Equals("UNAVALIABLE");
                     break;
             }
         }

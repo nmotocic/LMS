@@ -1,5 +1,6 @@
 ﻿using LMS.Domain.Enums;
 using LMS.Domain.Models;
+using LMS.Domain.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,13 @@ namespace LMS.Domain.Services
 {
     public interface IBookService
     {
-        IEnumerable<Book> GetAll();
-
-
+        BooksViewModel GetAll();
 
         String GetAuthor(int id);
         String GetTitle(int id);
         String GetGenre(int id);
         String GetPublisher(int id);
         int? GetYOP(int id);
-        EStatus GetStatus(int id);
+        string GetStatus(int id);
     }
 }

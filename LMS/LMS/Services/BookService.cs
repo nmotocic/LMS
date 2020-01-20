@@ -1,12 +1,7 @@
-﻿using LMS.Domain.Enums;
-using LMS.Domain.Models;
-using LMS.Domain.Repositories;
+﻿using LMS.Domain.Repositories;
 using LMS.Domain.Services;
-using LMS.Persistence.Context;
+using LMS.Domain.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace LMS.Services
 {
@@ -18,7 +13,9 @@ namespace LMS.Services
             _bookRepository = bookRepository;
         }
 
-        public IEnumerable<Book> GetAll() {
+        
+
+        public BooksViewModel GetAll() {
 
             return _bookRepository.GetAll();
         }
@@ -38,7 +35,7 @@ namespace LMS.Services
             return _bookRepository.GetByID(id).Publisher;
         }
 
-        public EStatus GetStatus(int id)
+        public string GetStatus(int id)
         {
             return _bookRepository.GetByID(id).Status;
         }

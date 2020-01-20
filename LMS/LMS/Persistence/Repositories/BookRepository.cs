@@ -1,6 +1,8 @@
 ﻿using LMS.Domain.Models;
 using LMS.Domain.Repositories;
+using LMS.Domain.ViewModels;
 using LMS.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +11,19 @@ using System.Threading.Tasks;
 
 namespace LMS.Persistence.Repositories
 {
-    public class BookRepository : BaseRepository, IBookRepository
+    public class BookRepository :  IBookRepository
     {
-        public BookRepository(LibraryContext context) : base(context)
+        protected static LibraryContext _context = new LibraryContext();
+        private static BookRepository instance;
+
+        public BookRepository(LibraryContext context)
         {
+            _context = context;
+        }
+
+
+        public static BookRepository getInstance() {
+            return instance ?? (instance = new BookRepository(_context));
         }
 
         public void Add(Book newBook)
@@ -26,16 +37,32 @@ namespace LMS.Persistence.Repositories
             _context.Book.Remove(book);
         }
 
-        public IEnumerable<Book> GetAll()
+        public BooksViewModel GetAll()
         {
-            return _context.Book;
+           
+            var query = _context.Book.AsNoTracking();
+            var books = query.Select(book => new BookViewModel {
+                Serial_Number = book.SerialNumber,
+                BookTitle = book.Title,
+                BookAuthor = book.Author,
+                Publisher = book.Publisher,
+                Year_Of_Publishing = book.YearOfPublishing,
+                Genre = book.Genre,
+                Status = book.Status
+            }).ToList();
+
+            var model = new BooksViewModel { Books = books };
+            return model;
         }
 
+        
         public Book GetByID(int id)
         {
-            return GetAll().FirstOrDefault(book => book.SerialNumber == id);
+            var book = _context.Book.AsNoTracking().Where(bk => bk.SerialNumber == id).SingleOrDefault();
+            return book;
         }
         
+
         public void Update(Book book)
         {
             _context.Book.Update(book);

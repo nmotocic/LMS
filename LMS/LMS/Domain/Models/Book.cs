@@ -1,5 +1,4 @@
-﻿using LMS.Domain.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace LMS.Domain.Models
@@ -18,7 +17,7 @@ namespace LMS.Domain.Models
         public string Publisher { get; set; }
         public int? YearOfPublishing { get; set; }
         public string Genre { get; set; }
-        public EStatus Status { get; set; }
+        public string Status { get; set; }
 
         public virtual ICollection<Loan> Loan { get; set; }
         public virtual ICollection<Reservation> Reservation { get; set; }

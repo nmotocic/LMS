@@ -1,4 +1,5 @@
 ﻿using LMS.Domain.Models;
+using LMS.Domain.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace LMS.Domain.Repositories
     public interface IReservationRepository
     {
         Reservation GetById(int id);
-        IEnumerable<Reservation> GetAll();
+        ReservationsViewModel GetAll();
 
         void Add(Reservation newReservation);
         void Update(Reservation reservation);

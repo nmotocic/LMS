@@ -26,7 +26,7 @@ namespace LMS.Persistence.Context
             if (!optionsBuilder.IsConfigured)
             {
 
-                optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=Library;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Data Source=PIKA-DESKTOP;Initial Catalog=Library;Integrated Security=True");
             }
         }
 

@@ -1,6 +1,8 @@
 ﻿using LMS.Domain.Models;
 using LMS.Domain.Repositories;
+using LMS.Domain.ViewModels;
 using LMS.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +11,12 @@ using System.Threading.Tasks;
 
 namespace LMS.Persistence.Repositories
 {
-    public class LoanRepository : BaseRepository, ILoanRepository
+    public class LoanRepository : ILoanRepository
     {
-        public LoanRepository(LibraryContext context) : base(context)
+        protected static LibraryContext _context = new LibraryContext();
+        public LoanRepository(LibraryContext context) 
         {
+            _context = context;
         }
 
         public void Add(Loan newLoan)
@@ -26,9 +30,21 @@ namespace LMS.Persistence.Repositories
             _context.Loan.Remove(loan);
         }
 
-        public IEnumerable<Loan> GetAll()
+        public LoansViewModel GetAll()
         {
-            return _context.Loan;
+            var query = _context.Loan.AsNoTracking();
+            var loans = query.Select(loan => new LoanViewModel
+            {
+                Loan_ID = loan.Id,
+                User = loan.User.Username,
+                Book = loan.Book.Title,
+                LoanDate = loan.LoanDate,
+                ReturnDate = loan.ReturnDate
+
+            }).ToList();
+
+            var model = new LoansViewModel { Loans = loans };
+            return model;
         }
 
         public Loan GetById(int loanID)

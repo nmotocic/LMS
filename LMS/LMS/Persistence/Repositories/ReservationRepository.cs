@@ -1,6 +1,8 @@
 ﻿using LMS.Domain.Models;
 using LMS.Domain.Repositories;
+using LMS.Domain.ViewModels;
 using LMS.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +11,12 @@ using System.Threading.Tasks;
 
 namespace LMS.Persistence.Repositories
 {
-    public class ReservationRepository : BaseRepository, IReservationRepository
+    public class ReservationRepository : IReservationRepository
     {
-        public ReservationRepository(LibraryContext context) : base(context)
+        protected static LibraryContext _context = new LibraryContext();
+        public ReservationRepository(LibraryContext context) 
         {
+            _context = context;
         }
 
         public void Add(Reservation newReservation)
@@ -21,14 +25,24 @@ namespace LMS.Persistence.Repositories
             _context.SaveChanges();
         }
 
-        public IEnumerable<Reservation> GetAll()
+        public ReservationsViewModel GetAll()
         {
-            return _context.Reservation;
+            var query = _context.Reservation.AsNoTracking();
+            var reservations = query.Select(reservation => new ReservationViewModel
+            {
+                Reservation_ID = reservation.Id,
+                User = reservation.User.Username,
+                Book = reservation.Book.Title,
+                ReservationDate = reservation.ReservationDate
+
+            }).ToList();
+            var model = new ReservationsViewModel { Reservations = reservations };
+            return model;
         }
 
         public Reservation GetById(int id)
         {
-            return GetAll().FirstOrDefault(r => r.Id == id);
+            return _context.Reservation.AsNoTracking().Where(r => r.Id == id).SingleOrDefault();
         }
 
         public void Remove(Reservation reservation)

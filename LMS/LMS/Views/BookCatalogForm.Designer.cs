@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.BookCatalogLV = new System.Windows.Forms.ListView();
-            this.BookCatalogLbl = new System.Windows.Forms.Label();
+            this.BookIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TitleHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AuthoerHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PublisherHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.YOPHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GenreHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StatusHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BookCatalogLbl = new System.Windows.Forms.Label();
             this.ProfileBtn = new System.Windows.Forms.Button();
-            this.BookIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // BookCatalogLV
@@ -58,14 +58,10 @@
             this.BookCatalogLV.UseCompatibleStateImageBehavior = false;
             this.BookCatalogLV.View = System.Windows.Forms.View.Details;
             // 
-            // BookCatalogLbl
+            // BookIDHeader
             // 
-            this.BookCatalogLbl.AutoSize = true;
-            this.BookCatalogLbl.Location = new System.Drawing.Point(344, 34);
-            this.BookCatalogLbl.Name = "BookCatalogLbl";
-            this.BookCatalogLbl.Size = new System.Drawing.Size(71, 13);
-            this.BookCatalogLbl.TabIndex = 1;
-            this.BookCatalogLbl.Text = "Book Catalog";
+            this.BookIDHeader.Text = "BookID";
+            this.BookIDHeader.Width = 49;
             // 
             // TitleHeader
             // 
@@ -96,6 +92,15 @@
             this.StatusHeader.Text = "Status";
             this.StatusHeader.Width = 131;
             // 
+            // BookCatalogLbl
+            // 
+            this.BookCatalogLbl.AutoSize = true;
+            this.BookCatalogLbl.Location = new System.Drawing.Point(344, 34);
+            this.BookCatalogLbl.Name = "BookCatalogLbl";
+            this.BookCatalogLbl.Size = new System.Drawing.Size(71, 13);
+            this.BookCatalogLbl.TabIndex = 1;
+            this.BookCatalogLbl.Text = "Book Catalog";
+            // 
             // ProfileBtn
             // 
             this.ProfileBtn.Location = new System.Drawing.Point(35, 403);
@@ -104,11 +109,6 @@
             this.ProfileBtn.TabIndex = 2;
             this.ProfileBtn.Text = "&Profile";
             this.ProfileBtn.UseVisualStyleBackColor = true;
-            // 
-            // BookIDHeader
-            // 
-            this.BookIDHeader.Text = "BookID";
-            this.BookIDHeader.Width = 49;
             // 
             // BookCatalogForm
             // 
@@ -120,6 +120,7 @@
             this.Controls.Add(this.BookCatalogLbl);
             this.Name = "BookCatalogForm";
             this.Text = "BookCatalogForm";
+            this.Load += new System.EventHandler(this.BookCatalogForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
