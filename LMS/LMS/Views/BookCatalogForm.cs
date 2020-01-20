@@ -17,7 +17,7 @@ namespace LMS.Views
     public partial class BookCatalogForm : Form
     {
         private BookPresenter _bookPresenter;
-       // private IEnumerable<Book> bookList;
+        
 
         public BookCatalogForm(BookPresenter bookPresenter)
         {

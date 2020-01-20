@@ -141,8 +141,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Enums\EStatus.cs" />
-    <Compile Include="Domain\IBookPresenter.cs" />
     <Compile Include="Domain\Repositories\IBookRepository.cs" />
     <Compile Include="Domain\Repositories\IUserRepository.cs" />
     <Compile Include="Domain\Repositories\ILoanRepository.cs" />
@@ -153,6 +151,13 @@
     <Compile Include="Domain\Services\IReservationService.cs" />
     <Compile Include="Domain\ViewModels\BooksViewModel.cs" />
     <Compile Include="Domain\ViewModels\BookViewModel.cs" />
+    <Compile Include="Domain\ViewModels\LoansViewModel.cs" />
+    <Compile Include="Domain\ViewModels\LoanViewModel.cs" />
+    <Compile Include="Domain\ViewModels\ReservationsViewModel.cs" />
+    <Compile Include="Domain\ViewModels\ReservationViewModel.cs" />
+    <Compile Include="Domain\ViewModels\UsersViewModel.cs" />
+    <Compile Include="Domain\ViewModels\UserViewModel.cs" />
+    <Compile Include="Presenters\AdminPresenter.cs" />
     <Compile Include="Presenters\BookPresenter.cs" />
     <Compile Include="Views\AdminForm.cs">
       <SubType>Form</SubType>
@@ -189,7 +194,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LibraryModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Persistence\Repositories\BaseRepository.cs" />
     <Compile Include="Persistence\Repositories\BookRepository.cs" />
     <Compile Include="Persistence\Repositories\UserRepository.cs" />
     <Compile Include="Persistence\Repositories\LoanRepository.cs" />

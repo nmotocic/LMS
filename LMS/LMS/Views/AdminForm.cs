@@ -16,5 +16,30 @@ namespace LMS.Views
         {
             InitializeComponent();
         }
+
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoanPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void LoanLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoanLV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReturnBtn1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

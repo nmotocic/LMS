@@ -9,6 +9,6 @@ namespace LMS.Domain.ViewModels
 {
     public class LoansViewModel
     {
-        public IEnumerable<Loan> Loans { get; set; }
+        public IEnumerable<LoanViewModel> Loans { get; set; }
     }
 }

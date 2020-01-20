@@ -41,18 +41,7 @@
             this.GenreHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StatusHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.LoanPanel = new System.Windows.Forms.Panel();
-            this.ReturnBtn1 = new System.Windows.Forms.Button();
-            this.LoanLV = new System.Windows.Forms.ListView();
-            this.LoanIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.BookHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.UsernameHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.EMailHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LoanDateHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ReturnDateHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LoanLbl = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
-            this.LoanPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // BookCatalogLbl
@@ -145,7 +134,6 @@
             // 
             // MainPanel
             // 
-            this.MainPanel.Controls.Add(this.LoanPanel);
             this.MainPanel.Controls.Add(this.BookCatalogLV);
             this.MainPanel.Controls.Add(this.ReservationsBtn);
             this.MainPanel.Controls.Add(this.LoansBtn);
@@ -157,81 +145,6 @@
             this.MainPanel.Size = new System.Drawing.Size(1109, 640);
             this.MainPanel.TabIndex = 6;
             // 
-            // LoanPanel
-            // 
-            this.LoanPanel.Controls.Add(this.LoanLbl);
-            this.LoanPanel.Controls.Add(this.LoanLV);
-            this.LoanPanel.Controls.Add(this.ReturnBtn1);
-            this.LoanPanel.Location = new System.Drawing.Point(6, 6);
-            this.LoanPanel.Name = "LoanPanel";
-            this.LoanPanel.Size = new System.Drawing.Size(1103, 634);
-            this.LoanPanel.TabIndex = 6;
-            this.LoanPanel.Visible = false;
-            // 
-            // ReturnBtn1
-            // 
-            this.ReturnBtn1.Location = new System.Drawing.Point(908, 576);
-            this.ReturnBtn1.Name = "ReturnBtn1";
-            this.ReturnBtn1.Size = new System.Drawing.Size(168, 41);
-            this.ReturnBtn1.TabIndex = 0;
-            this.ReturnBtn1.Text = "&Return";
-            this.ReturnBtn1.UseVisualStyleBackColor = true;
-            // 
-            // LoanLV
-            // 
-            this.LoanLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.LoanIDHeader,
-            this.BookHeader,
-            this.UsernameHeader,
-            this.EMailHeader,
-            this.LoanDateHeader,
-            this.ReturnDateHeader});
-            this.LoanLV.HideSelection = false;
-            this.LoanLV.Location = new System.Drawing.Point(86, 91);
-            this.LoanLV.Name = "LoanLV";
-            this.LoanLV.Size = new System.Drawing.Size(977, 441);
-            this.LoanLV.TabIndex = 1;
-            this.LoanLV.UseCompatibleStateImageBehavior = false;
-            this.LoanLV.View = System.Windows.Forms.View.Details;
-            // 
-            // LoanIDHeader
-            // 
-            this.LoanIDHeader.Text = "Loan ID";
-            // 
-            // BookHeader
-            // 
-            this.BookHeader.Text = "Book";
-            this.BookHeader.Width = 226;
-            // 
-            // UsernameHeader
-            // 
-            this.UsernameHeader.Text = "Username";
-            this.UsernameHeader.Width = 105;
-            // 
-            // EMailHeader
-            // 
-            this.EMailHeader.Text = "Email";
-            this.EMailHeader.Width = 133;
-            // 
-            // LoanDateHeader
-            // 
-            this.LoanDateHeader.Text = "Loan Date";
-            this.LoanDateHeader.Width = 94;
-            // 
-            // ReturnDateHeader
-            // 
-            this.ReturnDateHeader.Text = "Return Date";
-            this.ReturnDateHeader.Width = 94;
-            // 
-            // LoanLbl
-            // 
-            this.LoanLbl.AutoSize = true;
-            this.LoanLbl.Location = new System.Drawing.Point(484, 50);
-            this.LoanLbl.Name = "LoanLbl";
-            this.LoanLbl.Size = new System.Drawing.Size(36, 13);
-            this.LoanLbl.TabIndex = 2;
-            this.LoanLbl.Text = "Loans";
-            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,10 +153,9 @@
             this.Controls.Add(this.MainPanel);
             this.Name = "AdminForm";
             this.Text = "AdminForm";
+            this.Load += new System.EventHandler(this.AdminForm_Load);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
-            this.LoanPanel.ResumeLayout(false);
-            this.LoanPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -262,15 +174,5 @@
         private System.Windows.Forms.ColumnHeader GenreHeader;
         private System.Windows.Forms.ColumnHeader StatusHeader;
         private System.Windows.Forms.Panel MainPanel;
-        private System.Windows.Forms.Panel LoanPanel;
-        private System.Windows.Forms.Label LoanLbl;
-        private System.Windows.Forms.ListView LoanLV;
-        private System.Windows.Forms.ColumnHeader LoanIDHeader;
-        private System.Windows.Forms.ColumnHeader BookHeader;
-        private System.Windows.Forms.ColumnHeader UsernameHeader;
-        private System.Windows.Forms.ColumnHeader EMailHeader;
-        private System.Windows.Forms.ColumnHeader LoanDateHeader;
-        private System.Windows.Forms.ColumnHeader ReturnDateHeader;
-        private System.Windows.Forms.Button ReturnBtn1;
     }
 }
