@@ -9,12 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LMS
+namespace LMS.Views
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
         
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -67,5 +67,16 @@ namespace LMS
         private void label2_Click(object sender, EventArgs e)
             {
             }
+
+        private void registerBttn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            (new RegisterForm()).Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

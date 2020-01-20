@@ -9,13 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LMS
+namespace LMS.Views
 {
-    public partial class Form2 : Form
+    public partial class RegisterForm : Form
     {
         SqlConnection con = new SqlConnection("Data Source=PIKA-DESKTOP;Initial Catalog=Library;Integrated Security=True");
         string connectionString = "Data Source=PIKA-DESKTOP;Initial Catalog=Library;Integrated Security=True";
-        public Form2()
+        public RegisterForm()
         {
             InitializeComponent();
         }
@@ -50,6 +50,8 @@ namespace LMS
 
                     MessageBox.Show("Registraiton successfull!");
                     Clear();
+                    this.Hide();
+                    (new LoginForm()).Show();
                 }
             }
             catch (Exception ex) {

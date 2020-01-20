@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace LMS
+namespace LMS.Views
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,6 +36,7 @@ namespace LMS
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.registerBttn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // passwordBox
@@ -94,11 +95,22 @@ namespace LMS
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // registerBttn
+            // 
+            this.registerBttn.Location = new System.Drawing.Point(293, 350);
+            this.registerBttn.Name = "registerBttn";
+            this.registerBttn.Size = new System.Drawing.Size(137, 37);
+            this.registerBttn.TabIndex = 6;
+            this.registerBttn.Text = "&Register";
+            this.registerBttn.UseVisualStyleBackColor = true;
+            this.registerBttn.Click += new System.EventHandler(this.registerBttn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.registerBttn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -107,6 +119,7 @@ namespace LMS
             this.Controls.Add(this.passwordBox);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,6 +135,7 @@ namespace LMS
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button registerBttn;
     }
 }
 

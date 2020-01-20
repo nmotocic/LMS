@@ -22,7 +22,11 @@ namespace LMS.Services
             _bookRepository = bookRepository;
         }
 
-       
+        public IEnumerable<Loan> ListAll()
+        {
+            return _loanRepository.GetAll();
+        }
+
         //Check in the book
         public void CheckInBook(int bookId)
         {
@@ -60,6 +64,7 @@ namespace LMS.Services
         {
             //Is the book borrowed?
             if (IsCheckedOut(bookId)) {
+                //send message
                 return;
             }
             //if not...
@@ -77,8 +82,7 @@ namespace LMS.Services
             };
             _loanRepository.Add(loan);
 
-            //TODO: Add loan to profile
-            //TODO: Connect Customer and Loans
+            
            
         }
 
@@ -100,5 +104,7 @@ namespace LMS.Services
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

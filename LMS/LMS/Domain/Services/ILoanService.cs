@@ -8,7 +8,7 @@ namespace LMS.Domain.Services
 {
     public interface ILoanService
     {
-       
+        IEnumerable<Loan> ListAll();
         void CheckInBook(int bookId);
         void CheckOutBook(int bookId);
 

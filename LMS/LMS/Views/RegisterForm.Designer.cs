@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace LMS
+namespace LMS.Views
 {
-    partial class Form2
+    partial class RegisterForm
     {
         /// <summary>
         /// Required designer variable.

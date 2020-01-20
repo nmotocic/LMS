@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LMS.Domain.Services
 {
-    interface IReservationService
+    public interface IReservationService
     {
         
         void ReserveBook(int bookID);

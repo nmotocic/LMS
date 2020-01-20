@@ -67,11 +67,14 @@ F:\GitHub\LMS\LMS\LMS\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
 F:\GitHub\LMS\LMS\LMS\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 F:\GitHub\LMS\LMS\LMS\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.csprojAssemblyReference.cache
-F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.Form1.resources
-F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.Form2.resources
 F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.Properties.Resources.resources
 F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.csproj.GenerateResource.cache
 F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.csproj.CoreCompileInputs.cache
 F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.csproj.CopyComplete
 F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.exe
 F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.pdb
+F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.Views.BookCatalogForm.resources
+F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.Views.ProfileForm.resources
+F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.Views.AdminForm.resources
+F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.Views.LoginForm.resources
+F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.Views.RegisterForm.resources

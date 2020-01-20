@@ -141,6 +141,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\BookController.cs" />
     <Compile Include="Domain\Enums\EStatus.cs" />
     <Compile Include="Domain\Repositories\IBookRepository.cs" />
     <Compile Include="Domain\Repositories\IUserRepository.cs" />
@@ -150,18 +151,31 @@
     <Compile Include="Domain\Services\IUserService.cs" />
     <Compile Include="Domain\Services\ILoanService.cs" />
     <Compile Include="Domain\Services\IReservationService.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Domain\ViewModels\IBookViewModel.cs" />
+    <Compile Include="Views\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BookCatalogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BookCatalogForm.Designer.cs">
+      <DependentUpon>BookCatalogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Domain\Models\Book.cs" />
-    <Compile Include="Form2.cs">
+    <Compile Include="Views\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Views\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistence\Context\LibraryContext.cs" />
     <Compile Include="Domain\Models\Loan.cs" />
@@ -181,14 +195,26 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BookService.cs" />
-    <Compile Include="Services\CustomerService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\LoanService.cs" />
     <Compile Include="Services\ReservationService.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\ProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Views\BookCatalogForm.resx">
+      <DependentUpon>BookCatalogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -199,6 +225,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\ProfileForm.resx">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <EntityDeploy Include="Persistence\LibraryModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -220,6 +249,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

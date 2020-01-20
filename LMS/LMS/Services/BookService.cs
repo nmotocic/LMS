@@ -18,6 +18,11 @@ namespace LMS.Services
             _bookRepository = bookRepository;
         }
 
+        public IEnumerable<Book> GetAll() {
+
+            return _bookRepository.GetAll();
+        }
+
         public String GetAuthor(int id)
         {
             return _bookRepository.GetByID(id).Author;

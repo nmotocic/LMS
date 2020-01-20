@@ -9,7 +9,10 @@ namespace LMS.Domain.Services
 {
     public interface IBookService
     {
-       
+        IEnumerable<Book> GetAll();
+
+
+
         String GetAuthor(int id);
         String GetTitle(int id);
         String GetGenre(int id);
