@@ -28,69 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BookCatalogLV = new System.Windows.Forms.ListView();
-            this.BookIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TitleHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.AuthoerHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PublisherHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.YOPHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GenreHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.StatusHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BookCatalogLbl = new System.Windows.Forms.Label();
             this.ProfileBtn = new System.Windows.Forms.Button();
+            this.BookCatalogLV = new System.Windows.Forms.ListView();
+            this.BookID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Publisher = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.YOP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Genre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // BookCatalogLV
-            // 
-            this.BookCatalogLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.BookIDHeader,
-            this.TitleHeader,
-            this.AuthoerHeader,
-            this.PublisherHeader,
-            this.YOPHeader,
-            this.GenreHeader,
-            this.StatusHeader});
-            this.BookCatalogLV.HideSelection = false;
-            this.BookCatalogLV.Location = new System.Drawing.Point(32, 50);
-            this.BookCatalogLV.Name = "BookCatalogLV";
-            this.BookCatalogLV.Size = new System.Drawing.Size(730, 328);
-            this.BookCatalogLV.TabIndex = 0;
-            this.BookCatalogLV.UseCompatibleStateImageBehavior = false;
-            this.BookCatalogLV.View = System.Windows.Forms.View.Details;
-            // 
-            // BookIDHeader
-            // 
-            this.BookIDHeader.Text = "BookID";
-            this.BookIDHeader.Width = 49;
-            // 
-            // TitleHeader
-            // 
-            this.TitleHeader.Text = "Title";
-            this.TitleHeader.Width = 136;
-            // 
-            // AuthoerHeader
-            // 
-            this.AuthoerHeader.Text = "Author";
-            this.AuthoerHeader.Width = 136;
-            // 
-            // PublisherHeader
-            // 
-            this.PublisherHeader.Text = "Publisher";
-            // 
-            // YOPHeader
-            // 
-            this.YOPHeader.Text = "Year of Publishing";
-            this.YOPHeader.Width = 97;
-            // 
-            // GenreHeader
-            // 
-            this.GenreHeader.Text = "Genre";
-            this.GenreHeader.Width = 105;
-            // 
-            // StatusHeader
-            // 
-            this.StatusHeader.Text = "Status";
-            this.StatusHeader.Width = 131;
             // 
             // BookCatalogLbl
             // 
@@ -110,13 +59,66 @@
             this.ProfileBtn.Text = "&Profile";
             this.ProfileBtn.UseVisualStyleBackColor = true;
             // 
+            // BookCatalogLV
+            // 
+            this.BookCatalogLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.BookID,
+            this.Title,
+            this.Author,
+            this.Publisher,
+            this.YOP,
+            this.Genre,
+            this.Status});
+            this.BookCatalogLV.HideSelection = false;
+            this.BookCatalogLV.Location = new System.Drawing.Point(42, 52);
+            this.BookCatalogLV.Name = "BookCatalogLV";
+            this.BookCatalogLV.Size = new System.Drawing.Size(732, 329);
+            this.BookCatalogLV.TabIndex = 3;
+            this.BookCatalogLV.UseCompatibleStateImageBehavior = false;
+            this.BookCatalogLV.View = System.Windows.Forms.View.Details;
+            this.BookCatalogLV.SelectedIndexChanged += new System.EventHandler(this.BookCatalogLV_SelectedIndexChanged);
+            // 
+            // BookID
+            // 
+            this.BookID.Text = "BookID";
+            // 
+            // Title
+            // 
+            this.Title.Text = "Title";
+            // 
+            // Author
+            // 
+            this.Author.Text = "Author";
+            // 
+            // Publisher
+            // 
+            this.Publisher.Text = "Publisher";
+            // 
+            // YOP
+            // 
+            this.YOP.Text = "Year OF Publishing";
+            // 
+            // Genre
+            // 
+            this.Genre.Text = "Genre";
+            // 
+            // Status
+            // 
+            this.Status.Text = "Status";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "....";
+            this.columnHeader1.Width = 10;
+            // 
             // BookCatalogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.ProfileBtn);
             this.Controls.Add(this.BookCatalogLV);
+            this.Controls.Add(this.ProfileBtn);
             this.Controls.Add(this.BookCatalogLbl);
             this.Name = "BookCatalogForm";
             this.Text = "BookCatalogForm";
@@ -127,16 +129,16 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView BookCatalogLV;
         private System.Windows.Forms.Label BookCatalogLbl;
-        private System.Windows.Forms.ColumnHeader TitleHeader;
-        private System.Windows.Forms.ColumnHeader AuthoerHeader;
-        private System.Windows.Forms.ColumnHeader PublisherHeader;
-        private System.Windows.Forms.ColumnHeader YOPHeader;
-        private System.Windows.Forms.ColumnHeader GenreHeader;
-        private System.Windows.Forms.ColumnHeader StatusHeader;
         private System.Windows.Forms.Button ProfileBtn;
-        private System.Windows.Forms.ColumnHeader BookIDHeader;
+        private System.Windows.Forms.ListView BookCatalogLV;
+        private System.Windows.Forms.ColumnHeader BookID;
+        private System.Windows.Forms.ColumnHeader Title;
+        private System.Windows.Forms.ColumnHeader Author;
+        private System.Windows.Forms.ColumnHeader Publisher;
+        private System.Windows.Forms.ColumnHeader YOP;
+        private System.Windows.Forms.ColumnHeader Genre;
+        private System.Windows.Forms.ColumnHeader Status;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

@@ -41,8 +41,8 @@ namespace LMS.Persistence.Repositories
             var loans = query.Select(loan => new LoanViewModel
             {
                 Loan_ID = loan.Id,
-                User = loan.User.Username,
-                Book = loan.Book.Title,
+                User = loan.User,
+                Book = loan.Book,
                 LoanDate = loan.LoanDate,
                 ReturnDate = loan.ReturnDate
 

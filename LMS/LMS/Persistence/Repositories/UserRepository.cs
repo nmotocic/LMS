@@ -47,7 +47,7 @@ namespace LMS.Persistence.Repositories
 
         public User GetByID(int id)
         {
-            return GetAll().FirstOrDefault(customer => customer.Id == id);
+            return _context.User.AsNoTracking().FirstOrDefault(customer => customer.Id == id);
         }
         
         public void Update(User user)

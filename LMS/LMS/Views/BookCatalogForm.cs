@@ -17,7 +17,6 @@ namespace LMS.Views
     public partial class BookCatalogForm : Form
     {
         private BookPresenter _bookPresenter;
-        
 
         public BookCatalogForm(BookPresenter bookPresenter)
         {
@@ -40,6 +39,11 @@ namespace LMS.Views
                 item.SubItems.Add(book.Status.ToString());
                 BookCatalogLV.Items.Add(item); 
             }
+
+        }
+
+        private void BookCatalogLV_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -19,11 +19,13 @@ namespace LMS
         {
 
             BookPresenter bookPresenter = new BookPresenter(BookRepository.getInstance());
+           
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm());
-            Application.Run(new BookCatalogForm(bookPresenter));
+            Application.Run(new LoginForm());
+            //Application.Run(new BookCatalogForm(bookPresenter));
+            //Application.Run(new AddBookForm());
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LMS.Domain.Models
 {
@@ -10,6 +12,9 @@ namespace LMS.Domain.Models
             Loan = new HashSet<Loan>();
             Reservation = new HashSet<Reservation>();
         }
+
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
 
         public int SerialNumber { get; set; }
         public string Title { get; set; }

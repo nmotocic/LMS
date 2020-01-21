@@ -14,10 +14,18 @@ namespace LMS.Persistence.Repositories
     public class ReservationRepository : IReservationRepository
     {
         protected static LibraryContext _context = new LibraryContext();
+        private static ReservationRepository instance; 
+
         public ReservationRepository(LibraryContext context) 
         {
             _context = context;
         }
+
+        public static ReservationRepository getInstance()
+        {
+            return instance ?? (instance = new ReservationRepository(_context));
+        }
+
 
         public void Add(Reservation newReservation)
         {

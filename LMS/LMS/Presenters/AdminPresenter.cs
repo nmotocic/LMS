@@ -1,6 +1,7 @@
 ﻿using LMS.Domain.Models;
 using LMS.Domain.Repositories;
 using LMS.Domain.ViewModels;
+using LMS.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +16,12 @@ namespace LMS.Presenters
         private readonly ILoanRepository _loanRepository;
         private readonly IReservationRepository _reservationRepostory;
 
-        public AdminPresenter() { }
+       
 
-        public AdminPresenter(IBookRepository bookRepository, ILoanRepository loanRepository, IReservationRepository reservationRepository) {
-            _bookRepository = bookRepository;
-            _loanRepository = loanRepository;
-            _reservationRepostory = reservationRepository;
+        public AdminPresenter() {
+            _bookRepository = BookRepository.getInstance();
+            _loanRepository = LoanRepository.getInstance();
+            _reservationRepostory = ReservationRepository.getInstance();
         }
 
         public BooksViewModel ShowBooks() {

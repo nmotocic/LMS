@@ -28,13 +28,14 @@ namespace LMS.Persistence.Repositories
 
         public void Add(Book newBook)
         {
-            _context.Book.Add(newBook);
+            _context.Add(newBook);
+            
             _context.SaveChanges();
         }
 
         public void Delete(Book book)
         {
-            _context.Book.Remove(book);
+            _context.Remove(book);
         }
 
         public BooksViewModel GetAll()

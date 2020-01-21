@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LMS.Domain.ViewModels;
+using LMS.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,34 +14,45 @@ namespace LMS.Views
 {
     public partial class AdminForm : Form
     {
-        public AdminForm()
+        private AdminPresenter _adminPresenter = new AdminPresenter();
+
+        public AdminForm(AdminPresenter adminPresenter)
         {
+            _adminPresenter = adminPresenter;
+            InitializeComponent();
+        }
+
+        public AdminForm() {
             InitializeComponent();
         }
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
+            var bookList = _adminPresenter.ShowBooks();
 
-        }
-
-        private void LoanPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void LoanLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoanLV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            foreach (BookViewModel book in bookList.Books)
+            {
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Add(book.Serial_Number.ToString());
+                item.SubItems.Add(book.BookTitle);
+                item.SubItems.Add(book.BookAuthor);
+                item.SubItems.Add(book.Publisher);
+                item.SubItems.Add(book.Year_Of_Publishing.ToString());
+                item.SubItems.Add(book.Genre);
+                item.SubItems.Add(book.Status.ToString());
+                BookCatalogLV.Items.Add(item);
+            }
         }
 
         private void ReturnBtn1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddBookBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            
         }
     }
 }

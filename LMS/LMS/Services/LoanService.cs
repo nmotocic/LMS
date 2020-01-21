@@ -2,6 +2,7 @@
 using LMS.Domain.Models;
 using LMS.Domain.Repositories;
 using LMS.Domain.Services;
+using LMS.Domain.ViewModels;
 using LMS.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -22,9 +23,10 @@ namespace LMS.Services
             _bookRepository = bookRepository;
         }
 
-        public IEnumerable<Loan> ListAll()
+        public IEnumerable<LoanViewModel> ListAll()
         {
-            return _loanRepository.GetAll();
+            var list = _loanRepository.GetAll();
+            return list.Loans;
         }
 
         //Check in the book
@@ -32,8 +34,9 @@ namespace LMS.Services
         {
             var now = DateTime.Now;
             var book = _bookRepository.GetByID(bookId);
+            var list = _loanRepository.GetAll().Loans;
 
-            var currentStatus = _loanRepository.GetAll().Where(l => l.Book.Status.Equals("UNAVALIABLE"));
+            var currentStatus = list.Where(l => l.Book.Status.Equals("UNAVALIABLE"));
 
             //TO DO: figure this out
             if (currentStatus.Any()) {
@@ -93,7 +96,7 @@ namespace LMS.Services
 
         private bool IsCheckedOut(int bookId)
         {
-            return _loanRepository.GetAll().Any();
+            return _loanRepository.GetAll().Loans.Any();
         }
 
         

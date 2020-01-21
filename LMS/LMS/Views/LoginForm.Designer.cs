@@ -43,8 +43,10 @@ namespace LMS.Views
             // 
             this.passwordBox.Location = new System.Drawing.Point(348, 237);
             this.passwordBox.Name = "passwordBox";
+            this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(100, 20);
             this.passwordBox.TabIndex = 0;
+            this.passwordBox.UseSystemPasswordChar = true;
             this.passwordBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // usernameBox
@@ -105,7 +107,7 @@ namespace LMS.Views
             this.registerBttn.UseVisualStyleBackColor = true;
             this.registerBttn.Click += new System.EventHandler(this.registerBttn_Click);
             // 
-            // Form1
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,7 +119,7 @@ namespace LMS.Views
             this.Controls.Add(this.Username);
             this.Controls.Add(this.usernameBox);
             this.Controls.Add(this.passwordBox);
-            this.Name = "Form1";
+            this.Name = "LoginForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

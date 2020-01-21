@@ -41,6 +41,7 @@
             this.GenreHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StatusHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +62,7 @@
             this.AddBookBtn.TabIndex = 2;
             this.AddBookBtn.Text = "&Add new book";
             this.AddBookBtn.UseVisualStyleBackColor = true;
+            this.AddBookBtn.Click += new System.EventHandler(this.AddBookBtn_Click);
             // 
             // LoansBtn
             // 
@@ -83,6 +85,7 @@
             // BookCatalogLV
             // 
             this.BookCatalogLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
             this.BookIDHeader,
             this.TitleHeader,
             this.AuthoerHeader,
@@ -145,6 +148,13 @@
             this.MainPanel.Size = new System.Drawing.Size(1109, 640);
             this.MainPanel.TabIndex = 6;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.DisplayIndex = 7;
+            this.columnHeader1.Text = "";
+            this.columnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader1.Width = 0;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,5 +184,6 @@
         private System.Windows.Forms.ColumnHeader GenreHeader;
         private System.Windows.Forms.ColumnHeader StatusHeader;
         private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
