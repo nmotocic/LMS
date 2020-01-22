@@ -30,7 +30,7 @@ namespace LMS.Views
 
             foreach (BookViewModel book in bookList.Books) {
                 ListViewItem item = new ListViewItem();
-                item.SubItems.Add(book.Serial_Number.ToString());                
+                item.Text = book.Serial_Number.ToString();            
                 item.SubItems.Add(book.BookTitle);                
                 item.SubItems.Add(book.BookAuthor);                
                 item.SubItems.Add(book.Publisher);                

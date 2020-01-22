@@ -15,6 +15,7 @@ namespace LMS.Domain.Repositories
 
         void Add(Book newBook);
         void Update(Book book);
-        void Delete(Book book);
+        void Update(int bookID);
+        void Delete(int bookID);
     }
 }

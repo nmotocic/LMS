@@ -33,9 +33,12 @@ namespace LMS.Persistence.Repositories
             _context.SaveChanges();
         }
 
-        public void Delete(Book book)
+        public void Delete(int bookId)
         {
+            var book = GetByID(bookId);
+            
             _context.Remove(book);
+            _context.SaveChanges();
         }
 
         public BooksViewModel GetAll()
@@ -66,8 +69,24 @@ namespace LMS.Persistence.Repositories
 
         public void Update(Book book)
         {
-            _context.Book.Update(book);
+            if (book == null) {
+                //vrati poruku
+            }
+
+            bool checkID = _context.Book.Any(b => b.SerialNumber == book.SerialNumber);
+            if (!checkID) {
+                //vrati poruku
+            }
+            _context.Update(book);
+            _context.Entry(book).State = EntityState.Modified;
+           
+            _context.SaveChanges();
         }
-        
+
+        public void Update(int bookID)
+        {
+            var book = GetByID(bookID);
+            Update(book);
+        }
     }
 }

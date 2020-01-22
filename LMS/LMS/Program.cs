@@ -23,9 +23,10 @@ namespace LMS
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            //Application.Run(new LoginForm());
             //Application.Run(new BookCatalogForm(bookPresenter));
             //Application.Run(new AddBookForm());
+            Application.Run(new AdminForm());
         }
     }
 }

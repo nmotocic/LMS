@@ -33,15 +33,9 @@
             this.LoansBtn = new System.Windows.Forms.Button();
             this.ReservationsBtn = new System.Windows.Forms.Button();
             this.BookCatalogLV = new System.Windows.Forms.ListView();
-            this.BookIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TitleHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.AuthoerHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PublisherHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.YOPHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GenreHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.StatusHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EditBtn = new System.Windows.Forms.Button();
+            this.RemoveBtn = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +50,7 @@
             // 
             // AddBookBtn
             // 
-            this.AddBookBtn.Location = new System.Drawing.Point(35, 506);
+            this.AddBookBtn.Location = new System.Drawing.Point(31, 450);
             this.AddBookBtn.Name = "AddBookBtn";
             this.AddBookBtn.Size = new System.Drawing.Size(158, 34);
             this.AddBookBtn.TabIndex = 2;
@@ -84,15 +78,6 @@
             // 
             // BookCatalogLV
             // 
-            this.BookCatalogLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.BookIDHeader,
-            this.TitleHeader,
-            this.AuthoerHeader,
-            this.PublisherHeader,
-            this.YOPHeader,
-            this.GenreHeader,
-            this.StatusHeader});
             this.BookCatalogLV.HideSelection = false;
             this.BookCatalogLV.Location = new System.Drawing.Point(154, 82);
             this.BookCatalogLV.Name = "BookCatalogLV";
@@ -101,42 +86,10 @@
             this.BookCatalogLV.UseCompatibleStateImageBehavior = false;
             this.BookCatalogLV.View = System.Windows.Forms.View.Details;
             // 
-            // BookIDHeader
-            // 
-            this.BookIDHeader.Text = "BookID";
-            this.BookIDHeader.Width = 49;
-            // 
-            // TitleHeader
-            // 
-            this.TitleHeader.Text = "Title";
-            this.TitleHeader.Width = 136;
-            // 
-            // AuthoerHeader
-            // 
-            this.AuthoerHeader.Text = "Author";
-            this.AuthoerHeader.Width = 136;
-            // 
-            // PublisherHeader
-            // 
-            this.PublisherHeader.Text = "Publisher";
-            // 
-            // YOPHeader
-            // 
-            this.YOPHeader.Text = "Year of Publishing";
-            this.YOPHeader.Width = 97;
-            // 
-            // GenreHeader
-            // 
-            this.GenreHeader.Text = "Genre";
-            this.GenreHeader.Width = 105;
-            // 
-            // StatusHeader
-            // 
-            this.StatusHeader.Text = "Status";
-            this.StatusHeader.Width = 131;
-            // 
             // MainPanel
             // 
+            this.MainPanel.Controls.Add(this.RemoveBtn);
+            this.MainPanel.Controls.Add(this.EditBtn);
             this.MainPanel.Controls.Add(this.BookCatalogLV);
             this.MainPanel.Controls.Add(this.ReservationsBtn);
             this.MainPanel.Controls.Add(this.LoansBtn);
@@ -148,12 +101,25 @@
             this.MainPanel.Size = new System.Drawing.Size(1109, 640);
             this.MainPanel.TabIndex = 6;
             // 
-            // columnHeader1
+            // EditBtn
             // 
-            this.columnHeader1.DisplayIndex = 7;
-            this.columnHeader1.Text = "";
-            this.columnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader1.Width = 0;
+            this.EditBtn.Location = new System.Drawing.Point(30, 499);
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(158, 38);
+            this.EditBtn.TabIndex = 6;
+            this.EditBtn.Text = "&Edit book";
+            this.EditBtn.UseVisualStyleBackColor = true;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
+            // 
+            // RemoveBtn
+            // 
+            this.RemoveBtn.Location = new System.Drawing.Point(31, 554);
+            this.RemoveBtn.Name = "RemoveBtn";
+            this.RemoveBtn.Size = new System.Drawing.Size(157, 41);
+            this.RemoveBtn.TabIndex = 7;
+            this.RemoveBtn.Text = "&Remove";
+            this.RemoveBtn.UseVisualStyleBackColor = true;
+            this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
             // 
             // AdminForm
             // 
@@ -176,14 +142,8 @@
         private System.Windows.Forms.Button LoansBtn;
         private System.Windows.Forms.Button ReservationsBtn;
         private System.Windows.Forms.ListView BookCatalogLV;
-        private System.Windows.Forms.ColumnHeader BookIDHeader;
-        private System.Windows.Forms.ColumnHeader TitleHeader;
-        private System.Windows.Forms.ColumnHeader AuthoerHeader;
-        private System.Windows.Forms.ColumnHeader PublisherHeader;
-        private System.Windows.Forms.ColumnHeader YOPHeader;
-        private System.Windows.Forms.ColumnHeader GenreHeader;
-        private System.Windows.Forms.ColumnHeader StatusHeader;
         private System.Windows.Forms.Panel MainPanel;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Button EditBtn;
+        private System.Windows.Forms.Button RemoveBtn;
     }
 }

@@ -31,6 +31,7 @@
             this.BookCatalogLbl = new System.Windows.Forms.Label();
             this.ProfileBtn = new System.Windows.Forms.Button();
             this.BookCatalogLV = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BookID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -38,7 +39,6 @@
             this.YOP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Genre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // BookCatalogLbl
@@ -79,6 +79,11 @@
             this.BookCatalogLV.View = System.Windows.Forms.View.Details;
             this.BookCatalogLV.SelectedIndexChanged += new System.EventHandler(this.BookCatalogLV_SelectedIndexChanged);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "....";
+            this.columnHeader1.Width = 10;
+            // 
             // BookID
             // 
             this.BookID.Text = "BookID";
@@ -86,10 +91,12 @@
             // Title
             // 
             this.Title.Text = "Title";
+            this.Title.Width = 161;
             // 
             // Author
             // 
             this.Author.Text = "Author";
+            this.Author.Width = 124;
             // 
             // Publisher
             // 
@@ -98,19 +105,17 @@
             // YOP
             // 
             this.YOP.Text = "Year OF Publishing";
+            this.YOP.Width = 104;
             // 
             // Genre
             // 
             this.Genre.Text = "Genre";
+            this.Genre.Width = 105;
             // 
             // Status
             // 
             this.Status.Text = "Status";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "....";
-            this.columnHeader1.Width = 10;
+            this.Status.Width = 144;
             // 
             // BookCatalogForm
             // 

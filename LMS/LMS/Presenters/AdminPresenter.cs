@@ -16,7 +16,7 @@ namespace LMS.Presenters
         private readonly ILoanRepository _loanRepository;
         private readonly IReservationRepository _reservationRepostory;
 
-       
+
 
         public AdminPresenter() {
             _bookRepository = BookRepository.getInstance();
@@ -38,6 +38,14 @@ namespace LMS.Presenters
 
         public void AddBook(Book newBook) {
             _bookRepository.Add(newBook);
+        }
+
+        public void EditBook(Book book) {
+            _bookRepository.Update(book);
+        }
+
+        public void RemoveBook(Book book) {
+            _bookRepository.Delete(book.SerialNumber);
         }
     }
 }
