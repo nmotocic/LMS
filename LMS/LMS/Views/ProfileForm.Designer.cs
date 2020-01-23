@@ -44,6 +44,7 @@
             this.InsertEmailLbl = new System.Windows.Forms.Label();
             this.InsertPhoneLbl = new System.Windows.Forms.Label();
             this.InsertUsernameLbl = new System.Windows.Forms.Label();
+            this.returnListBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // returnBtn
@@ -52,8 +53,9 @@
             this.returnBtn.Name = "returnBtn";
             this.returnBtn.Size = new System.Drawing.Size(114, 35);
             this.returnBtn.TabIndex = 0;
-            this.returnBtn.Text = "&Return";
+            this.returnBtn.Text = "&Return book";
             this.returnBtn.UseVisualStyleBackColor = true;
+            this.returnBtn.Click += new System.EventHandler(this.returnBtn_Click);
             // 
             // ProfileInfo
             // 
@@ -186,11 +188,22 @@
             this.InsertUsernameLbl.Size = new System.Drawing.Size(0, 13);
             this.InsertUsernameLbl.TabIndex = 15;
             // 
+            // returnListBtn
+            // 
+            this.returnListBtn.Location = new System.Drawing.Point(437, 393);
+            this.returnListBtn.Name = "returnListBtn";
+            this.returnListBtn.Size = new System.Drawing.Size(174, 36);
+            this.returnListBtn.TabIndex = 16;
+            this.returnListBtn.Text = "&Return to list";
+            this.returnListBtn.UseVisualStyleBackColor = true;
+            this.returnListBtn.Click += new System.EventHandler(this.returnListBtn_Click);
+            // 
             // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.returnListBtn);
             this.Controls.Add(this.InsertUsernameLbl);
             this.Controls.Add(this.InsertPhoneLbl);
             this.Controls.Add(this.InsertEmailLbl);
@@ -209,6 +222,7 @@
             this.Controls.Add(this.returnBtn);
             this.Name = "ProfileForm";
             this.Text = "ProfileForm";
+            this.Load += new System.EventHandler(this.ProfileForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +246,6 @@
         private System.Windows.Forms.Label InsertEmailLbl;
         private System.Windows.Forms.Label InsertPhoneLbl;
         private System.Windows.Forms.Label InsertUsernameLbl;
+        private System.Windows.Forms.Button returnListBtn;
     }
 }

@@ -47,7 +47,7 @@ namespace LMS.Views
             this.passwordBox.Size = new System.Drawing.Size(100, 20);
             this.passwordBox.TabIndex = 0;
             this.passwordBox.UseSystemPasswordChar = true;
-            this.passwordBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            
             // 
             // usernameBox
             // 
@@ -55,7 +55,6 @@ namespace LMS.Views
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(100, 20);
             this.usernameBox.TabIndex = 1;
-            this.usernameBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // Username
             // 
@@ -65,7 +64,6 @@ namespace LMS.Views
             this.Username.Size = new System.Drawing.Size(55, 13);
             this.Username.TabIndex = 2;
             this.Username.Text = "Username";
-            this.Username.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -75,7 +73,6 @@ namespace LMS.Views
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button1
             // 
@@ -121,7 +118,6 @@ namespace LMS.Views
             this.Controls.Add(this.passwordBox);
             this.Name = "LoginForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

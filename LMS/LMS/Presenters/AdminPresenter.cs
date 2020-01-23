@@ -16,8 +16,6 @@ namespace LMS.Presenters
         private readonly ILoanRepository _loanRepository;
         private readonly IReservationRepository _reservationRepostory;
 
-
-
         public AdminPresenter() {
             _bookRepository = BookRepository.getInstance();
             _loanRepository = LoanRepository.getInstance();

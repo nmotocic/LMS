@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using LMS.Presenters;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,8 @@ namespace LMS.Views
 {
     public partial class LoginForm : Form
     {
-        
+        ProfilePresenter profilePresenter = new ProfilePresenter();
+
         public LoginForm()
         {
             InitializeComponent();
@@ -50,23 +52,7 @@ namespace LMS.Views
             Application.Exit();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-            {
-            }
+        
 
         private void registerBttn_Click(object sender, EventArgs e)
         {
@@ -74,9 +60,6 @@ namespace LMS.Views
             (new RegisterForm()).Show();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

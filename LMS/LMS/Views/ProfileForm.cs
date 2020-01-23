@@ -16,5 +16,21 @@ namespace LMS.Views
         {
             InitializeComponent();
         }
+
+        private void returnListBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProfileForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void returnBtn_Click(object sender, EventArgs e)
+        {
+            //Return the book
+
+        }
     }
 }

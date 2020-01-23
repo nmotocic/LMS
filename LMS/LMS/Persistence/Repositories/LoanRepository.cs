@@ -35,6 +35,7 @@ namespace LMS.Persistence.Repositories
         public void Delete(Loan loan)
         {
             _context.Loan.Remove(loan);
+            _context.SaveChanges(); 
         }
 
         public LoansViewModel GetAll()
@@ -68,6 +69,7 @@ namespace LMS.Persistence.Repositories
         public void Update(Loan loan)
         {
             _context.Loan.Update(loan);
+            _context.SaveChanges();
         }
         
     }
