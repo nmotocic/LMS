@@ -2,6 +2,7 @@
 using LMS.Domain.Repositories;
 using LMS.Domain.ViewModels;
 using LMS.Persistence.Context;
+using LMS.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -33,14 +34,20 @@ namespace LMS.Persistence.Repositories
             _context.SaveChanges();
         }
 
+        public void CancelReservation(Reservation reservation)
+        {
+            ReservationService reservationService = new ReservationService();
+            reservationService.CancelReservation(reservation.Id);
+        }
+
         public ReservationsViewModel GetAll()
         {
             var query = _context.Reservation.AsNoTracking();
             var reservations = query.Select(reservation => new ReservationViewModel
             {
                 Reservation_ID = reservation.Id,
-                User = reservation.User.Username,
-                Book = reservation.Book.Title,
+                User = reservation.User,
+                Book = reservation.Book,
                 ReservationDate = reservation.ReservationDate
 
             }).ToList();
@@ -56,12 +63,14 @@ namespace LMS.Persistence.Repositories
         public void Remove(Reservation reservation)
         {
             _context.Reservation.Remove(reservation);
+            _context.SaveChanges();
         }
 
         
         public void Update(Reservation reservation)
         {
             _context.Reservation.Update(reservation);
+            _context.SaveChanges();
         }
         
     }

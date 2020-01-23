@@ -21,6 +21,8 @@ namespace LMS.Services
             _bookRepository = bookRepository;
         }
 
+        public ReservationService() { }
+
        
         
         public void ReserveBook(int bookID)
@@ -42,7 +44,7 @@ namespace LMS.Services
         private void UpdateBookStatus(int bookID, string newStatus)
         {
             var book = _bookRepository.GetByID(bookID);
-            _bookRepository.Update(book);
+            
 
             switch (newStatus)
             {
@@ -53,6 +55,7 @@ namespace LMS.Services
                     book.Status.Equals("RESERVED");
                     break;
             }
+            _bookRepository.Update(book);
         }
 
         public void CancelReservation(int reservationID)

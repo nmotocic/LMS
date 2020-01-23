@@ -10,8 +10,8 @@ namespace LMS.Domain.ViewModels
     public class ReservationViewModel
     {
         public int Reservation_ID { get; set; }
-        public string User { get; set; }
-        public string Book { get; set; }
+        public User User { get; set; }
+        public Book Book { get; set; }
         public DateTime? ReservationDate { get; set; }
     }
 }

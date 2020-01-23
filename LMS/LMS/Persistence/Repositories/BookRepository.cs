@@ -2,12 +2,14 @@
 using LMS.Domain.Repositories;
 using LMS.Domain.ViewModels;
 using LMS.Persistence.Context;
+using LMS.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LMS.Persistence.Repositories
 {
@@ -15,6 +17,7 @@ namespace LMS.Persistence.Repositories
     {
         protected static LibraryContext _context = new LibraryContext();
         private static BookRepository instance;
+        
 
         public BookRepository(LibraryContext context)
         {
@@ -70,12 +73,12 @@ namespace LMS.Persistence.Repositories
         public void Update(Book book)
         {
             if (book == null) {
-                //vrati poruku
+                MessageBox.Show("Book can't be updated!");
             }
 
             bool checkID = _context.Book.Any(b => b.SerialNumber == book.SerialNumber);
             if (!checkID) {
-                //vrati poruku
+                MessageBox.Show("Book can't be updated!");
             }
             _context.Update(book);
             _context.Entry(book).State = EntityState.Modified;
@@ -87,6 +90,17 @@ namespace LMS.Persistence.Repositories
         {
             var book = GetByID(bookID);
             Update(book);
+        }
+
+        public void Loan(Book book) {
+            LoanService loanService = new LoanService();
+            loanService.CheckOutBook(book.SerialNumber);
+
+        }
+
+        public void Reserve(Book book) {
+            ReservationService reservationService = new ReservationService();
+            reservationService.ReserveBook(book.SerialNumber);
         }
     }
 }

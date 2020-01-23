@@ -47,5 +47,16 @@ namespace LMS.Presenters
         public void RemoveBook(Book book) {
             _bookRepository.Delete(book.SerialNumber);
         }
+
+        public void CancelReservation(int reservationID)
+        {
+            var reservation = _reservationRepostory.GetById(reservationID);
+            _reservationRepostory.CancelReservation(reservation);
+        }
+
+        public void RenewLoan(int loanId) {
+            var loan = _loanRepository.GetById(loanId);
+            _loanRepository.RenewLoan(loan);
+        }
     }
 }

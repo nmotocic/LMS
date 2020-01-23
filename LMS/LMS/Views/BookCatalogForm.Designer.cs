@@ -39,6 +39,8 @@
             this.YOP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Genre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LoanBtn = new System.Windows.Forms.Button();
+            this.ReserveBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BookCatalogLbl
@@ -117,11 +119,33 @@
             this.Status.Text = "Status";
             this.Status.Width = 144;
             // 
+            // LoanBtn
+            // 
+            this.LoanBtn.Location = new System.Drawing.Point(347, 404);
+            this.LoanBtn.Name = "LoanBtn";
+            this.LoanBtn.Size = new System.Drawing.Size(106, 35);
+            this.LoanBtn.TabIndex = 4;
+            this.LoanBtn.Text = "&Loan";
+            this.LoanBtn.UseVisualStyleBackColor = true;
+            this.LoanBtn.Click += new System.EventHandler(this.LoanBtn_Click);
+            // 
+            // ReserveBtn
+            // 
+            this.ReserveBtn.Location = new System.Drawing.Point(459, 404);
+            this.ReserveBtn.Name = "ReserveBtn";
+            this.ReserveBtn.Size = new System.Drawing.Size(110, 35);
+            this.ReserveBtn.TabIndex = 5;
+            this.ReserveBtn.Text = "&Reserve";
+            this.ReserveBtn.UseVisualStyleBackColor = true;
+            this.ReserveBtn.Click += new System.EventHandler(this.ReserveBtn_Click);
+            // 
             // BookCatalogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ReserveBtn);
+            this.Controls.Add(this.LoanBtn);
             this.Controls.Add(this.BookCatalogLV);
             this.Controls.Add(this.ProfileBtn);
             this.Controls.Add(this.BookCatalogLbl);
@@ -145,5 +169,7 @@
         private System.Windows.Forms.ColumnHeader Genre;
         private System.Windows.Forms.ColumnHeader Status;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Button LoanBtn;
+        private System.Windows.Forms.Button ReserveBtn;
     }
 }

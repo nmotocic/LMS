@@ -23,6 +23,8 @@ namespace LMS.Services
             _bookRepository = bookRepository;
         }
 
+        public LoanService() { }
+
         public IEnumerable<LoanViewModel> ListAll()
         {
             var list = _loanRepository.GetAll();
@@ -45,13 +47,13 @@ namespace LMS.Services
             }
 
             UpdateBookStatus(bookId, "Avaliable");
-           
+            _bookRepository.Update(book);
         }
 
         private void UpdateBookStatus(int bookId, string newStatus)
         {
             var book = _bookRepository.GetByID(bookId);
-           // _bookRepository.Update(book);
+           
             switch (newStatus)
             {
                 case "Avaliable":
@@ -61,6 +63,8 @@ namespace LMS.Services
                     book.Status.Equals("UNAVALIABLE");
                     break;
             }
+
+            
         }
 
         public void CheckOutBook(int bookId)
@@ -99,13 +103,14 @@ namespace LMS.Services
             return _loanRepository.GetAll().Loans.Any();
         }
 
-        
-
 
         //TODO
         public void RenewLoan(int loanID)
         {
-            throw new NotImplementedException();
+            var loan = _loanRepository.GetById(loanID);
+            var newDate = GetDefaultLoanTime((DateTime)loan.ReturnDate);
+            loan.ReturnDate = newDate;
+            _loanRepository.Update(loan);
         }
 
        

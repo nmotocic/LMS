@@ -80,3 +80,5 @@ F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.Views.RegisterForm.resources
 F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.csprojAssemblyReference.cache
 F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.Views.AddBookForm.resources
 F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.Views.EditBookForm.resources
+F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.Views.LoansForm.resources
+F:\GitHub\LMS\LMS\LMS\obj\Debug\LMS.Views.ReservationForm.resources

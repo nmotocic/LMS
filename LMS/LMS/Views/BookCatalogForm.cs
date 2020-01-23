@@ -46,5 +46,27 @@ namespace LMS.Views
         {
 
         }
+
+        private void LoanBtn_Click(object sender, EventArgs e)
+        {
+            int bookId = 0;
+            var selectedItem = BookCatalogLV.SelectedItems;
+            if (selectedItem.Count == 1)
+            {
+                bookId = Convert.ToInt32(selectedItem[0].SubItems[0].Text);
+            }
+            _bookPresenter.Loan(bookId);
+        }
+
+        private void ReserveBtn_Click(object sender, EventArgs e)
+        {
+            int bookId = 0;
+            var selectedItem = BookCatalogLV.SelectedItems;
+            if (selectedItem.Count == 1)
+            {
+                bookId = Convert.ToInt32(selectedItem[0].SubItems[0].Text);
+            }
+            _bookPresenter.Reserve(bookId);
+        }
     }
 }

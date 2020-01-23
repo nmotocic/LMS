@@ -98,18 +98,7 @@ namespace LMS.Views
             _adminPresenter.RemoveBook(book);
             MessageBox.Show("Book successfully removed!");
             BookCatalogLV.Refresh();
-            /*
-            var bookList = BookCatalogLV.Items;
-           
-            foreach (ListViewItem item in bookList)
-            {
-                if (item.Selected)
-                {
-                    Book book = itemToBook(item);
-                }
-
-            }
-            */
+            
         }
 
         private Book itemToBook(ListViewItem item)
@@ -124,6 +113,11 @@ namespace LMS.Views
             book.Status = item.SubItems[6].Text;
 
             return book;
+        }
+
+        private void LoansBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -183,6 +183,12 @@
     <Compile Include="Views\EditBookForm.Designer.cs">
       <DependentUpon>EditBookForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\LoansForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoansForm.Designer.cs">
+      <DependentUpon>LoansForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,12 @@
     <Compile Include="Views\ProfileForm.Designer.cs">
       <DependentUpon>ProfileForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ReservationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ReservationForm.Designer.cs">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\AddBookForm.resx">
       <DependentUpon>AddBookForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EditBookForm.resx">
       <DependentUpon>EditBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoansForm.resx">
+      <DependentUpon>LoansForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -251,6 +266,9 @@
     </Compile>
     <EmbeddedResource Include="Views\ProfileForm.resx">
       <DependentUpon>ProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReservationForm.resx">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <EntityDeploy Include="Persistence\LibraryModel.edmx">

@@ -16,5 +16,7 @@ namespace LMS.Domain.Repositories
         void Add(Loan newLoan);
         void Update(Loan loan);
         void Delete(Loan loan);
+
+        void RenewLoan(Loan loan);
     }
 }

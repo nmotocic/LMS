@@ -16,5 +16,6 @@ namespace LMS.Domain.Repositories
         void Add(Reservation newReservation);
         void Update(Reservation reservation);
         void Remove(Reservation reservation);
+        void CancelReservation(Reservation reservation);
     }
 }

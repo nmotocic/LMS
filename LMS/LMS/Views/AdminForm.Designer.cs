@@ -34,8 +34,8 @@
             this.ReservationsBtn = new System.Windows.Forms.Button();
             this.BookCatalogLV = new System.Windows.Forms.ListView();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.EditBtn = new System.Windows.Forms.Button();
             this.RemoveBtn = new System.Windows.Forms.Button();
+            this.EditBtn = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,7 @@
             this.LoansBtn.TabIndex = 3;
             this.LoansBtn.Text = "See &loans";
             this.LoansBtn.UseVisualStyleBackColor = true;
+            this.LoansBtn.Click += new System.EventHandler(this.LoansBtn_Click);
             // 
             // ReservationsBtn
             // 
@@ -101,16 +102,6 @@
             this.MainPanel.Size = new System.Drawing.Size(1109, 640);
             this.MainPanel.TabIndex = 6;
             // 
-            // EditBtn
-            // 
-            this.EditBtn.Location = new System.Drawing.Point(30, 499);
-            this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Size = new System.Drawing.Size(158, 38);
-            this.EditBtn.TabIndex = 6;
-            this.EditBtn.Text = "&Edit book";
-            this.EditBtn.UseVisualStyleBackColor = true;
-            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
-            // 
             // RemoveBtn
             // 
             this.RemoveBtn.Location = new System.Drawing.Point(31, 554);
@@ -120,6 +111,16 @@
             this.RemoveBtn.Text = "&Remove";
             this.RemoveBtn.UseVisualStyleBackColor = true;
             this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
+            // 
+            // EditBtn
+            // 
+            this.EditBtn.Location = new System.Drawing.Point(30, 499);
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(158, 38);
+            this.EditBtn.TabIndex = 6;
+            this.EditBtn.Text = "&Edit book";
+            this.EditBtn.UseVisualStyleBackColor = true;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // AdminForm
             // 

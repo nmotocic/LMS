@@ -2,6 +2,7 @@
 using LMS.Domain.Repositories;
 using LMS.Domain.ViewModels;
 using LMS.Persistence.Context;
+using LMS.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace LMS.Persistence.Repositories
     {
         protected static LibraryContext _context = new LibraryContext();
         private static LoanRepository instance;
+        
 
         public LoanRepository(LibraryContext context) 
         {
@@ -56,7 +58,13 @@ namespace LMS.Persistence.Repositories
         {
             return _context.Loan.FirstOrDefault(l => l.Id == loanID); ;
         }
-        
+
+        public void RenewLoan(Loan loan)
+        {
+            LoanService loanService = new LoanService();
+            loanService.RenewLoan(loan.Id);
+        }
+
         public void Update(Loan loan)
         {
             _context.Loan.Update(loan);
