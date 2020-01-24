@@ -30,16 +30,22 @@ namespace LMS.Views
             string password = passwordBox.Text;
             string username = usernameBox.Text;
 
-            string query = "select * from tbUser where username='" + username + "'and password='" + password + "'";
+            string query = "select * from Customer where username='" + username + "'and password='" + password + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataAdapter da = new SqlDataAdapter(query, con);
             DataTable dataTable = new DataTable();
             da.Fill(dataTable);
             if (dataTable.Rows.Count > 0)
             {
-                //this.Hide()
-                //show whatever needs to be shown
                 MessageBox.Show("Login successful!");
+                this.Hide();
+                if (username.Equals("admin")) {
+                    (new AdminForm()).Show();
+                }
+
+                (new BookCatalogForm(username)).Show();
+
+                
             }
             else {
                 MessageBox.Show("Invalid login! Please check your username and password");
@@ -60,6 +66,6 @@ namespace LMS.Views
             (new RegisterForm()).Show();
         }
 
-        
+       
     }
 }

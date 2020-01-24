@@ -18,7 +18,7 @@ namespace LMS.Domain.Repositories
         void Update(int bookID);
         void Delete(int bookID);
 
-        void Loan(Book book);
-        void Reserve(Book book);
+        void Loan(Book book, string username);
+        void Reserve(Book book, string username);
     }
 }

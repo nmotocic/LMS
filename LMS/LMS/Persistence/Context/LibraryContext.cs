@@ -19,7 +19,7 @@ namespace LMS.Persistence.Context
         public virtual DbSet<Book> Book { get; set; }
         public virtual DbSet<Loan> Loan { get; set; }
         public virtual DbSet<Reservation> Reservation { get; set; }
-        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Customer> Customer { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -126,7 +126,7 @@ namespace LMS.Persistence.Context
                     .HasConstraintName("FK_Reservation_User");
             });
 
-            modelBuilder.Entity<User>(entity =>
+            modelBuilder.Entity<Customer>(entity =>
             {
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
@@ -163,6 +163,7 @@ namespace LMS.Persistence.Context
                     .IsRequired()
                     .HasColumnName("username")
                     .HasMaxLength(50)
+                   
                     .IsUnicode(false);
             });
 

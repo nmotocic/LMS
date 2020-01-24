@@ -55,9 +55,20 @@ namespace LMS.Persistence.Repositories
             return model;
         }
 
+        public Loan GetByBookId(int bookId)
+        {
+            return _context.Loan.AsNoTracking().FirstOrDefault(l => l.BookId == bookId);
+        }
+
         public Loan GetById(int loanID)
         {
-            return _context.Loan.FirstOrDefault(l => l.Id == loanID); ;
+            return _context.Loan.AsNoTracking().FirstOrDefault(l => l.Id == loanID); 
+        }
+
+        public List<Loan> GetByUsername(string username)
+        {
+            var list = _context.Loan.AsNoTracking().Where(l => l.User.Username.Equals(username)).ToList();
+            return list;
         }
 
         public void RenewLoan(Loan loan)

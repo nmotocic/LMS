@@ -12,26 +12,32 @@ namespace LMS.Persistence.Repositories
     public class UserRepository :  IUserRepository
     {
         protected static LibraryContext _context = new LibraryContext();
+        private static UserRepository instance;
+
         public UserRepository(LibraryContext context)
         {
             _context = context;
         }
-        
 
-        public void Add(User newUser)
+        public static UserRepository getInstance()
         {
-            _context.User.Add(newUser);
+            return instance ?? (instance = new UserRepository(_context));
+        }
+
+        public void Add(Customer newUser)
+        {
+            _context.Customer.Add(newUser);
             _context.SaveChanges();
         }
 
-        public void Delete(User user)
+        public void Delete(Customer user)
         {
-            _context.User.Remove(user);
+            _context.Customer.Remove(user);
         }
 
         public UsersViewModel GetAll()
         {
-            var query = _context.User.AsNoTracking();
+            var query = _context.Customer.AsNoTracking();
             var users = query.Select(user => new UserViewModel
             {
                 User_ID = user.Id,
@@ -45,14 +51,19 @@ namespace LMS.Persistence.Repositories
             return model;
         }
 
-        public User GetByID(int id)
+        public Customer GetByID(int id)
         {
-            return _context.User.AsNoTracking().FirstOrDefault(customer => customer.Id == id);
+            return _context.Customer.AsNoTracking().FirstOrDefault(customer => customer.Id == id);
         }
-        
-        public void Update(User user)
+
+        public Customer GetByUsername(string username)
         {
-            _context.User.Update(user);
+            return _context.Customer.AsNoTracking().FirstOrDefault(user => user.Username.Equals(username));
+        }
+
+        public void Update(Customer user)
+        {
+            _context.Customer.Update(user);
         }
         
     }

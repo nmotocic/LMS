@@ -18,5 +18,7 @@ namespace LMS.Domain.Repositories
         void Delete(Loan loan);
 
         void RenewLoan(Loan loan);
+        Loan GetByBookId(int bookId);
+        List<Loan> GetByUsername(string username);
     }
 }

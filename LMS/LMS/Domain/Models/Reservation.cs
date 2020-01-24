@@ -11,6 +11,6 @@ namespace LMS.Domain.Models
         public DateTime? ReservationDate { get; set; }
 
         public virtual Book Book { get; set; }
-        public virtual User User { get; set; }
+        public virtual Customer User { get; set; }
     }
 }

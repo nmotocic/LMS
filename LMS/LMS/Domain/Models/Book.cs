@@ -12,10 +12,10 @@ namespace LMS.Domain.Models
             Loan = new HashSet<Loan>();
             Reservation = new HashSet<Reservation>();
         }
-
+        
         [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        
         public int SerialNumber { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }

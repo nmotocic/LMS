@@ -3,6 +3,7 @@ using LMS.Domain.Models;
 using LMS.Domain.Repositories;
 using LMS.Domain.Services;
 using LMS.Persistence.Context;
+using LMS.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,27 +15,31 @@ namespace LMS.Services
     {
         private IReservationRepository _reservationRepository;
         private IBookRepository _bookRepository;
+        private IUserRepository _userRepository;
 
-        public ReservationService(IReservationRepository resevrationRepository, IBookRepository bookRepository)
+        public ReservationService()
         {
-            _reservationRepository = resevrationRepository;
-            _bookRepository = bookRepository;
+            _reservationRepository = ReservationRepository.getInstance();
+            _bookRepository = BookRepository.getInstance();
+            _userRepository = UserRepository.getInstance();
         }
 
-        public ReservationService() { }
+        //public ReservationService() { }
 
        
         
-        public void ReserveBook(int bookID)
+        public void ReserveBook(int bookID, string username)
         {
             var book = _bookRepository.GetByID(bookID);
+            var user = _userRepository.GetByUsername(username);
             UpdateBookStatus(bookID, "Reserved");
             var date = DateTime.Now;
             var reservation = new Reservation
             {
+                Id = bookID,
                 BookId = bookID,
                 Book = book,
-                
+                User = user,
                 ReservationDate = date
             };
             _reservationRepository.Add(reservation);
@@ -44,15 +49,14 @@ namespace LMS.Services
         private void UpdateBookStatus(int bookID, string newStatus)
         {
             var book = _bookRepository.GetByID(bookID);
-            
 
             switch (newStatus)
             {
                 case "Avaliable":
-                    book.Status.Equals("AVALIABLE");
+                    book.Status.Equals("Avaliable");
                     break;
                 case "Reserved":
-                    book.Status.Equals("RESERVED");
+                    book.Status.Equals("Reserved");
                     break;
             }
             _bookRepository.Update(book);

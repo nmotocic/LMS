@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LMS.Domain.Models
 {
@@ -13,6 +14,6 @@ namespace LMS.Domain.Models
         public int? LoanRenew { get; set; }
 
         public virtual Book Book { get; set; }
-        public virtual User User { get; set; }
+        public virtual Customer User { get; set; }
     }
 }

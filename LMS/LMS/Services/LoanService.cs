@@ -4,6 +4,7 @@ using LMS.Domain.Repositories;
 using LMS.Domain.Services;
 using LMS.Domain.ViewModels;
 using LMS.Persistence.Context;
+using LMS.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,16 +15,18 @@ namespace LMS.Services
 {
     public class LoanService : ILoanService
     {
-        private ILoanRepository _loanRepository;
-        private IBookRepository _bookRepository;
+        private readonly ILoanRepository _loanRepository;
+        private readonly IBookRepository _bookRepository;
+        private readonly IUserRepository _userRepository;
 
-        public LoanService(ILoanRepository loanRepository, IBookRepository bookRepository)
+        public LoanService()
         {
-            _loanRepository = loanRepository;
-            _bookRepository = bookRepository;
+            _loanRepository = LoanRepository.getInstance();
+            _bookRepository = BookRepository.getInstance();
+            _userRepository = UserRepository.getInstance();
         }
 
-        public LoanService() { }
+       // public LoanService() { }
 
         public IEnumerable<LoanViewModel> ListAll()
         {
@@ -38,7 +41,8 @@ namespace LMS.Services
             var book = _bookRepository.GetByID(bookId);
             var list = _loanRepository.GetAll().Loans;
 
-            var currentStatus = list.Where(l => l.Book.Status.Equals("UNAVALIABLE"));
+            var currentStatus = list.Where(l => l.Book.Status.Equals("Unavaliable"));
+            var loan = _loanRepository.GetByBookId(bookId);
 
             //TO DO: figure this out
             if (currentStatus.Any()) {
@@ -48,6 +52,7 @@ namespace LMS.Services
 
             UpdateBookStatus(bookId, "Avaliable");
             _bookRepository.Update(book);
+            _loanRepository.Delete(loan);
         }
 
         private void UpdateBookStatus(int bookId, string newStatus)
@@ -57,17 +62,17 @@ namespace LMS.Services
             switch (newStatus)
             {
                 case "Avaliable":
-                    book.Status.Equals("AVALIABLE");
+                    book.Status.Equals("Avaliable");
                     break;
                 case "Unavaliable":
-                    book.Status.Equals("UNAVALIABLE");
+                    book.Status.Equals("Unavaliable");
                     break;
             }
 
             
         }
 
-        public void CheckOutBook(int bookId)
+        public void CheckOutBook(int bookId,string username)
         {
             //Is the book borrowed?
             if (IsCheckedOut(bookId)) {
@@ -76,14 +81,17 @@ namespace LMS.Services
             }
             //if not...
             var item = _bookRepository.GetByID(bookId);
+            var user = _userRepository.GetByUsername(username);
+
             UpdateBookStatus(bookId, "Unavaliable");
 
             var now = DateTime.Now;
             var loan = new Loan
             {
+                Id = bookId,
                 BookId = bookId,
                 Book = item,
-
+                User = user,
                 LoanDate = now,
                 ReturnDate = GetDefaultLoanTime(now)
             };

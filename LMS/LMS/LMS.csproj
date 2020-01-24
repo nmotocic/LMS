@@ -159,6 +159,7 @@
     <Compile Include="Domain\ViewModels\UserViewModel.cs" />
     <Compile Include="Presenters\AdminPresenter.cs" />
     <Compile Include="Presenters\BookPresenter.cs" />
+    <Compile Include="Presenters\ProfilePresenter.cs" />
     <Compile Include="Views\AddBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,7 +206,7 @@
     <Compile Include="Persistence\Context\LibraryContext.cs" />
     <Compile Include="Domain\Models\Loan.cs" />
     <Compile Include="Domain\Models\Reservation.cs" />
-    <Compile Include="Domain\Models\User.cs" />
+    <Compile Include="Domain\Models\Customer.cs" />
     <Compile Include="Persistence\LibraryModel.Designer.cs" />
     <Compile Include="Persistence\LibraryModel1.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -1,5 +1,6 @@
 ﻿using LMS.Domain.Repositories;
 using LMS.Domain.ViewModels;
+using LMS.Persistence.Repositories;
 
 namespace LMS.Presenters
 {
@@ -7,12 +8,11 @@ namespace LMS.Presenters
     {
         private readonly IBookRepository _bookRepository;
 
-        public BookPresenter()
-        { }
+        //public BookPresenter() { }
 
 
-        public BookPresenter(IBookRepository bookRepository) {
-            _bookRepository = bookRepository;
+        public BookPresenter() {
+            _bookRepository = BookRepository.getInstance();
         }
 
         public BooksViewModel ShowBooks()
@@ -20,14 +20,15 @@ namespace LMS.Presenters
             return _bookRepository.GetAll();
         }
 
-        public void Loan(int bookID) {
+        public void Loan(int bookID, string username) {
             var book = _bookRepository.GetByID(bookID);
-            _bookRepository.Loan(book);
+            _bookRepository.Loan(book, username);
         }
 
-        public void Reserve(int bookId)
+        public void Reserve(int bookID, string username)
         {
-
+            var book = _bookRepository.GetByID(bookID);
+            _bookRepository.Reserve(book, username);
 
         }
     }

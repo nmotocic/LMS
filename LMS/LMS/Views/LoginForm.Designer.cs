@@ -47,7 +47,6 @@ namespace LMS.Views
             this.passwordBox.Size = new System.Drawing.Size(100, 20);
             this.passwordBox.TabIndex = 0;
             this.passwordBox.UseSystemPasswordChar = true;
-            
             // 
             // usernameBox
             // 
@@ -118,6 +117,7 @@ namespace LMS.Views
             this.Controls.Add(this.passwordBox);
             this.Name = "LoginForm";
             this.Text = "Form1";
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -11,7 +11,7 @@ namespace LMS.Domain.Services
     {
         IEnumerable<LoanViewModel> ListAll();
         void CheckInBook(int bookId);
-        void CheckOutBook(int bookId);
+        void CheckOutBook(int bookId, string username);
 
         void RenewLoan(int loanID);
     }

@@ -10,7 +10,7 @@ namespace LMS.Domain.Services
     public interface IReservationService
     {
         
-        void ReserveBook(int bookID);
+        void ReserveBook(int bookID, string username);
         void CancelReservation(int reservationID);
     }
 }

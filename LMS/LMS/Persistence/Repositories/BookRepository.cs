@@ -92,15 +92,17 @@ namespace LMS.Persistence.Repositories
             Update(book);
         }
 
-        public void Loan(Book book) {
+        public void Loan(Book book, string username) {
             LoanService loanService = new LoanService();
-            loanService.CheckOutBook(book.SerialNumber);
+            loanService.CheckOutBook(book.SerialNumber, username);
 
         }
 
-        public void Reserve(Book book) {
+        public void Reserve(Book book, string username) {
             ReservationService reservationService = new ReservationService();
-            reservationService.ReserveBook(book.SerialNumber);
+            reservationService.ReserveBook(book.SerialNumber, username);
         }
+
+       
     }
 }

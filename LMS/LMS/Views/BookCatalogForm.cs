@@ -17,12 +17,16 @@ namespace LMS.Views
     public partial class BookCatalogForm : Form
     {
         private BookPresenter _bookPresenter;
+        private string _username;
 
-        public BookCatalogForm(BookPresenter bookPresenter)
+        public BookCatalogForm(string username)
         {
-            _bookPresenter = bookPresenter;
+            _bookPresenter = new BookPresenter();
+            _username = username;
             InitializeComponent();
         }
+
+
 
         private void BookCatalogForm_Load(object sender, EventArgs e)
         {
@@ -55,7 +59,7 @@ namespace LMS.Views
             {
                 bookId = Convert.ToInt32(selectedItem[0].SubItems[0].Text);
             }
-            _bookPresenter.Loan(bookId);
+            _bookPresenter.Loan(bookId, _username);
         }
 
         private void ReserveBtn_Click(object sender, EventArgs e)
@@ -66,7 +70,13 @@ namespace LMS.Views
             {
                 bookId = Convert.ToInt32(selectedItem[0].SubItems[0].Text);
             }
-            _bookPresenter.Reserve(bookId);
+            _bookPresenter.Reserve(bookId, _username);
+        }
+
+        private void ProfileBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ProfileForm(_username).Show();
         }
     }
 }

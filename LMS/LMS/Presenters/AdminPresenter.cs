@@ -14,12 +14,12 @@ namespace LMS.Presenters
     {
         private readonly IBookRepository _bookRepository;
         private readonly ILoanRepository _loanRepository;
-        private readonly IReservationRepository _reservationRepostory;
+        private readonly IReservationRepository _reservationRepository;
 
         public AdminPresenter() {
             _bookRepository = BookRepository.getInstance();
             _loanRepository = LoanRepository.getInstance();
-            _reservationRepostory = ReservationRepository.getInstance();
+            _reservationRepository = ReservationRepository.getInstance();
         }
 
         public BooksViewModel ShowBooks() {
@@ -31,7 +31,7 @@ namespace LMS.Presenters
         }
 
         public ReservationsViewModel ShowReservations() {
-            return _reservationRepostory.GetAll();
+            return _reservationRepository.GetAll();
         }
 
         public void AddBook(Book newBook) {
@@ -48,8 +48,8 @@ namespace LMS.Presenters
 
         public void CancelReservation(int reservationID)
         {
-            var reservation = _reservationRepostory.GetById(reservationID);
-            _reservationRepostory.CancelReservation(reservation);
+            var reservation = _reservationRepository.GetById(reservationID);
+            _reservationRepository.CancelReservation(reservation);
         }
 
         public void RenewLoan(int loanId) {

@@ -30,7 +30,10 @@ namespace LMS.Persistence.Repositories
 
         public void Add(Reservation newReservation)
         {
+            newReservation.Book = new Book() { SerialNumber = newReservation.BookId };
+            _context.Book.Attach(newReservation.Book);
             _context.Reservation.Add(newReservation);
+            
             _context.SaveChanges();
         }
 
@@ -58,6 +61,11 @@ namespace LMS.Persistence.Repositories
         public Reservation GetById(int id)
         {
             return _context.Reservation.AsNoTracking().Where(r => r.Id == id).SingleOrDefault();
+        }
+
+        public List<Reservation> GetByUsername(string username)
+        {
+            return _context.Reservation.AsNoTracking().Where(r => r.User.Username.Equals(username)).ToList();
         }
 
         public void Remove(Reservation reservation)

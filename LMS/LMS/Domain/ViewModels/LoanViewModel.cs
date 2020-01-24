@@ -10,7 +10,7 @@ namespace LMS.Domain.ViewModels
     public class LoanViewModel
     {
         public int Loan_ID { get; set; }
-        public User User { get; set; }
+        public Customer User { get; set; }
         public Book Book { get; set; }
         public DateTime? LoanDate { get; set; }
         public DateTime? ReturnDate { get; set; }

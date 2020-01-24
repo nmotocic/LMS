@@ -31,7 +31,6 @@
             this.BookCatalogLbl = new System.Windows.Forms.Label();
             this.ProfileBtn = new System.Windows.Forms.Button();
             this.BookCatalogLV = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BookID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -60,11 +59,11 @@
             this.ProfileBtn.TabIndex = 2;
             this.ProfileBtn.Text = "&Profile";
             this.ProfileBtn.UseVisualStyleBackColor = true;
+            this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
             // 
             // BookCatalogLV
             // 
             this.BookCatalogLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
             this.BookID,
             this.Title,
             this.Author,
@@ -80,11 +79,6 @@
             this.BookCatalogLV.UseCompatibleStateImageBehavior = false;
             this.BookCatalogLV.View = System.Windows.Forms.View.Details;
             this.BookCatalogLV.SelectedIndexChanged += new System.EventHandler(this.BookCatalogLV_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "....";
-            this.columnHeader1.Width = 10;
             // 
             // BookID
             // 
@@ -168,7 +162,6 @@
         private System.Windows.Forms.ColumnHeader YOP;
         private System.Windows.Forms.ColumnHeader Genre;
         private System.Windows.Forms.ColumnHeader Status;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Button LoanBtn;
         private System.Windows.Forms.Button ReserveBtn;
     }
