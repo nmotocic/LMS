@@ -59,10 +59,10 @@ namespace LMS.Services
             switch (newStatus)
             {
                 case "Avaliable":
-                    book.Status.Equals("Avaliable");
+                    book.Status = "Avaliable";
                     break;
                 case "Reserved":
-                    book.Status.Equals("Reserved");
+                    book.Status = "Reserved";
                     break;
             }
             _bookRepository.Update(book);

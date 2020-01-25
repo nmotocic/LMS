@@ -31,7 +31,9 @@ namespace LMS.Persistence.Repositories
         public void Add(Loan newLoan)
         {
             newLoan.Book = new Book() { SerialNumber = newLoan.BookId };
+            newLoan.User = new Customer() { Id = newLoan.CustomerId };
             _context.Book.Attach(newLoan.Book);
+            _context.Customer.Attach(newLoan.User);
 
             _context.Loan.Add(newLoan);
             _context.SaveChanges();

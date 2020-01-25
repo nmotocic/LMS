@@ -62,10 +62,10 @@ namespace LMS.Services
             switch (newStatus)
             {
                 case "Avaliable":
-                    book.Status.Equals("Avaliable");
+                    book.Status = "Avaliable";
                     break;
                 case "Unavaliable":
-                    book.Status.Equals("Unavaliable");
+                    book.Status = "Unavaliable";
                     break;
             }
 
@@ -80,7 +80,7 @@ namespace LMS.Services
                 return;
             }
             //if not...
-            var item = _bookRepository.GetByID(bookId);
+            var book = _bookRepository.GetByID(bookId);
             var user = _userRepository.GetByUsername(username);
 
             UpdateBookStatus(bookId, "Unavaliable");
@@ -91,15 +91,14 @@ namespace LMS.Services
                 Id = RandomNumber(1000,10000),
                 BookId = bookId,
                 CustomerId = user.Id,
-                //Book = item,
-               //User = user,
+                Book = book,
+                User = user,
                 LoanDate = now,
                 ReturnDate = GetDefaultLoanTime(now)
             };
             _loanRepository.Add(loan);
+            _bookRepository.Update(book);
 
-            
-           
         }
 
         private DateTime? GetDefaultLoanTime(DateTime now)

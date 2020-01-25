@@ -12,6 +12,7 @@ namespace LMS.Domain.ViewModels
         public int Reservation_ID { get; set; }
         public Customer User { get; set; }
         public Book Book { get; set; }
+        
         public DateTime? ReservationDate { get; set; }
     }
 }

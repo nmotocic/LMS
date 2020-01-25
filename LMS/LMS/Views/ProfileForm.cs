@@ -54,8 +54,6 @@ namespace LMS.Views
                 ListViewItem item = new ListViewItem();
                 item.Text = loan.Loan_ID.ToString();
                 item.SubItems.Add(loan.BookTitle);
-                item.SubItems.Add(loan.Username);
-                item.SubItems.Add(loan.Email);
                 item.SubItems.Add(loan.LoanDate.ToString());
                 item.SubItems.Add(loan.ReturnDate.ToString());
                 LoanListView.Items.Add(item);
@@ -70,10 +68,7 @@ namespace LMS.Views
                 ListViewItem item = new ListViewItem();
                 item.Text = reservation.Reservation_ID.ToString();
                 item.SubItems.Add(reservation.Book.Title);
-                item.SubItems.Add(reservation.User.Username);
-                item.SubItems.Add(reservation.User.Email);
                 item.SubItems.Add(reservation.ReservationDate.ToString());
-
                 ReservationLV.Items.Add(item);
             }
         }

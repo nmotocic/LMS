@@ -77,8 +77,9 @@ namespace LMS.Presenters
         {
             ReservationViewModel rmv = new ReservationViewModel();
             rmv.Reservation_ID = reservation.Id;
-            rmv.User = reservation.User;
-            rmv.Book = reservation.Book;
+            rmv.User =_userRepository.GetByID(reservation.CustomerId);
+            rmv.Book = _bookRepository.GetByID(reservation.BookId);
+            
             rmv.ReservationDate = reservation.ReservationDate;
             return rmv;
         }
@@ -87,10 +88,9 @@ namespace LMS.Presenters
         {
             LoanViewModel lmv = new LoanViewModel();
             lmv.Loan_ID = loan.Id;
-            lmv.User = loan.User;
-            //lmv.Username = loan.User.Username;
-            lmv.Book = loan.Book;
-            lmv.BookTitle = loan.Book.Title;
+            lmv.User = _userRepository.GetByID(loan.CustomerId);
+            lmv.Book = _bookRepository.GetByID(loan.BookId);
+            lmv.BookTitle = _bookRepository.GetByID(loan.BookId).Title;
             lmv.LoanDate = loan.LoanDate;
             lmv.ReturnDate = loan.ReturnDate;
             return lmv;
