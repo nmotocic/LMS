@@ -53,9 +53,9 @@ namespace LMS.Views
             {
                 ListViewItem item = new ListViewItem();
                 item.Text = loan.Loan_ID.ToString();
-                item.SubItems.Add(loan.Book.Title);
-                item.SubItems.Add(loan.User.Username);
-                item.SubItems.Add(loan.User.Email);
+                item.SubItems.Add(loan.BookTitle);
+                item.SubItems.Add(loan.Username);
+                item.SubItems.Add(loan.Email);
                 item.SubItems.Add(loan.LoanDate.ToString());
                 item.SubItems.Add(loan.ReturnDate.ToString());
                 LoanListView.Items.Add(item);
@@ -82,7 +82,7 @@ namespace LMS.Views
             var user = profilePresenter.UserDetails(username);
             NameAddLbl.Text = user.Name;
             addSurnameLbl.Text = user.Surname;
-            addPhoneLbl.Text = user.Phone.ToString();
+            addPhoneLbl.Text = user.Phone;
             addMailLbl.Text = user.Email;
             addUsernameLbl.Text = user.Username;
         }

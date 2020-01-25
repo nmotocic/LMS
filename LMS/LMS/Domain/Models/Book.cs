@@ -15,8 +15,8 @@ namespace LMS.Domain.Models
         
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        
         public int SerialNumber { get; set; }
+
         public string Title { get; set; }
         public string Author { get; set; }
         public string Publisher { get; set; }

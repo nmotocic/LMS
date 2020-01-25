@@ -32,8 +32,8 @@ namespace LMS.Persistence.Repositories
         {
             newReservation.Book = new Book() { SerialNumber = newReservation.BookId };
             _context.Book.Attach(newReservation.Book);
+
             _context.Reservation.Add(newReservation);
-            
             _context.SaveChanges();
         }
 

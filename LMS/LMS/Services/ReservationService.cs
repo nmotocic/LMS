@@ -36,7 +36,7 @@ namespace LMS.Services
             var date = DateTime.Now;
             var reservation = new Reservation
             {
-                Id = bookID,
+                Id = RandomNumber(10000, 100000),
                 BookId = bookID,
                 Book = book,
                 User = user,
@@ -44,6 +44,12 @@ namespace LMS.Services
             };
             _reservationRepository.Add(reservation);
             
+        }
+
+        private int RandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
         }
 
         private void UpdateBookStatus(int bookID, string newStatus)

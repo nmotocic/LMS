@@ -22,12 +22,17 @@ namespace LMS.Persistence.Repositories
         {
             _context = context;
         }
+
         public static LoanRepository getInstance()
         {
             return instance ?? (instance = new LoanRepository(_context));
         }
+
         public void Add(Loan newLoan)
         {
+            newLoan.Book = new Book() { SerialNumber = newLoan.BookId };
+            _context.Book.Attach(newLoan.Book);
+
             _context.Loan.Add(newLoan);
             _context.SaveChanges();
         }
@@ -45,7 +50,10 @@ namespace LMS.Persistence.Repositories
             {
                 Loan_ID = loan.Id,
                 User = loan.User,
+                Username = loan.User.Username,
+                Email = loan.User.Email,
                 Book = loan.Book,
+                BookTitle = loan.Book.Title,
                 LoanDate = loan.LoanDate,
                 ReturnDate = loan.ReturnDate
 

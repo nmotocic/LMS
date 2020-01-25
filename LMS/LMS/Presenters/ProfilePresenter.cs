@@ -33,7 +33,7 @@ namespace LMS.Presenters
             user.User_ID = findUser.Id;
             user.Email = findUser.Email;
             user.Username = findUser.Username;
-            user.Phone = user.Phone;
+            user.Phone = findUser.Phone;
             return user;
         }
 
@@ -88,7 +88,9 @@ namespace LMS.Presenters
             LoanViewModel lmv = new LoanViewModel();
             lmv.Loan_ID = loan.Id;
             lmv.User = loan.User;
+            //lmv.Username = loan.User.Username;
             lmv.Book = loan.Book;
+            lmv.BookTitle = loan.Book.Title;
             lmv.LoanDate = loan.LoanDate;
             lmv.ReturnDate = loan.ReturnDate;
             return lmv;

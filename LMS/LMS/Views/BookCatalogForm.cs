@@ -43,7 +43,7 @@ namespace LMS.Views
                 item.SubItems.Add(book.Status.ToString());
                 BookCatalogLV.Items.Add(item); 
             }
-
+            
         }
 
         private void BookCatalogLV_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,6 +60,7 @@ namespace LMS.Views
                 bookId = Convert.ToInt32(selectedItem[0].SubItems[0].Text);
             }
             _bookPresenter.Loan(bookId, _username);
+            BookCatalogLV.Refresh();
         }
 
         private void ReserveBtn_Click(object sender, EventArgs e)

@@ -88,10 +88,11 @@ namespace LMS.Services
             var now = DateTime.Now;
             var loan = new Loan
             {
-                Id = bookId,
+                Id = RandomNumber(1000,10000),
                 BookId = bookId,
-                Book = item,
-                User = user,
+                CustomerId = user.Id,
+                //Book = item,
+               //User = user,
                 LoanDate = now,
                 ReturnDate = GetDefaultLoanTime(now)
             };
@@ -108,7 +109,12 @@ namespace LMS.Services
 
         private bool IsCheckedOut(int bookId)
         {
-            return _loanRepository.GetAll().Loans.Any();
+            
+            if (_loanRepository.GetByBookId(bookId) != null) {
+                return true;
+            }
+
+            return false;
         }
 
 
@@ -121,6 +127,12 @@ namespace LMS.Services
             _loanRepository.Update(loan);
         }
 
-       
+        private int RandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+        }
+
+
     }
 }
