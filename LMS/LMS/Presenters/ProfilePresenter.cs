@@ -79,7 +79,8 @@ namespace LMS.Presenters
             rmv.Reservation_ID = reservation.Id;
             rmv.User =_userRepository.GetByID(reservation.CustomerId);
             rmv.Book = _bookRepository.GetByID(reservation.BookId);
-            
+            rmv.BookTitle = _bookRepository.GetByID(reservation.BookId).Title;
+
             rmv.ReservationDate = reservation.ReservationDate;
             return rmv;
         }
@@ -94,6 +95,12 @@ namespace LMS.Presenters
             lmv.LoanDate = loan.LoanDate;
             lmv.ReturnDate = loan.ReturnDate;
             return lmv;
+        }
+
+        internal void ReturnBook(int loanId)
+        {
+            var loan = _loanRepository.GetById(loanId);
+            _loanRepository.ReturnBook(loan);
         }
     }
 }

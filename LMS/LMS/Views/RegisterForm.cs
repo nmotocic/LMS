@@ -40,6 +40,7 @@ namespace LMS.Views
                     con.Open();
                     SqlCommand cmd = new SqlCommand("UserAdd", con);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", RandomNumber(0, 1000));
                     cmd.Parameters.AddWithValue("@name", firstName.Text);
                     cmd.Parameters.AddWithValue("@surname", surnameBox.Text);
                     cmd.Parameters.AddWithValue("@email", emailBox.Text);
@@ -67,6 +68,12 @@ namespace LMS.Views
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private int RandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
         }
     }
 }

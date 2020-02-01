@@ -39,11 +39,15 @@ namespace LMS.Views
             {
                 MessageBox.Show("Login successful!");
                 this.Hide();
-                if (username.Equals("admin")) {
+                if (username.Equals("admin"))
+                {
                     (new AdminForm()).Show();
                 }
+                else {
+                    (new BookCatalogForm(username)).Show();
+                }
 
-                (new BookCatalogForm(username)).Show();
+                
 
                 
             }
@@ -66,6 +70,6 @@ namespace LMS.Views
             (new RegisterForm()).Show();
         }
 
-       
+        
     }
 }

@@ -20,9 +20,9 @@ namespace LMS.Presenters
             return _bookRepository.GetAll();
         }
 
-        public void Loan(int bookID, string username) {
+        public bool Loan(int bookID, string username) {
             var book = _bookRepository.GetByID(bookID);
-            _bookRepository.Loan(book, username);
+            return _bookRepository.Loan(book, username);
         }
 
         public void Reserve(int bookID, string username)

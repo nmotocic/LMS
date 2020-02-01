@@ -72,18 +72,19 @@ namespace LMS.Services
             
         }
 
-        public void CheckOutBook(int bookId,string username)
+        public bool CheckOutBook(int bookId,string username)
         {
             //Is the book borrowed?
             if (IsCheckedOut(bookId)) {
-                //send message
-                return;
+                Console.WriteLine("Book has been borrowed or reserved!");
+                return false;
             }
             //if not...
             var book = _bookRepository.GetByID(bookId);
             var user = _userRepository.GetByUsername(username);
 
             UpdateBookStatus(bookId, "Unavaliable");
+            _bookRepository.Update(book);
 
             var now = DateTime.Now;
             var loan = new Loan
@@ -97,7 +98,8 @@ namespace LMS.Services
                 ReturnDate = GetDefaultLoanTime(now)
             };
             _loanRepository.Add(loan);
-            _bookRepository.Update(book);
+            //_bookRepository.Update(book);
+            return true;
 
         }
 
@@ -108,11 +110,12 @@ namespace LMS.Services
 
         private bool IsCheckedOut(int bookId)
         {
-            
-            if (_loanRepository.GetByBookId(bookId) != null) {
+            var book = _bookRepository.GetByID(bookId);
+            string currentStatus = book.Status;
+
+            if (currentStatus.Equals("Unavaliable") || currentStatus.Equals("Reserved")) {
                 return true;
             }
-
             return false;
         }
 

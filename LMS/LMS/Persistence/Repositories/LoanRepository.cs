@@ -87,6 +87,12 @@ namespace LMS.Persistence.Repositories
             loanService.RenewLoan(loan.Id);
         }
 
+        public void ReturnBook(Loan loan)
+        {
+            LoanService loanService = new LoanService();
+            loanService.CheckInBook(loan.BookId);
+        }
+
         public void Update(Loan loan)
         {
             _context.Loan.Update(loan);

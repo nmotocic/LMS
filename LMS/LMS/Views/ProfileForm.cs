@@ -37,14 +37,6 @@ namespace LMS.Views
             ShowUserDetails();
         }
 
-        
-
-        private void returnBtn_Click(object sender, EventArgs e)
-        {
-            //Return the book
-
-
-        }
 
         private void LoadLoans()
         {
@@ -91,6 +83,8 @@ namespace LMS.Views
                 reservationID = Convert.ToInt32(selectedItem[0].SubItems[0].Text);
             }
             profilePresenter.CancelReservation(reservationID);
+            MessageBox.Show("Reservation successfully cancelled!");
+            LoadReservations();
         }
 
         private void renewLoanBtn_Click(object sender, EventArgs e)
@@ -102,7 +96,21 @@ namespace LMS.Views
                 loanId = Convert.ToInt32(selectedItem[0].SubItems[0].Text);
             }
             profilePresenter.RenewLoan(loanId);
+            MessageBox.Show("Loan successfully renewed!");
             LoanListView.Refresh();
+        }
+
+        private void returnBtn_Click(object sender, EventArgs e)
+        {
+            int loanId = 0;
+            var selectedItem = LoanListView.SelectedItems;
+            if (selectedItem.Count == 1)
+            {
+                loanId = Convert.ToInt32(selectedItem[0].SubItems[0].Text);
+            }
+            profilePresenter.ReturnBook(loanId);
+            MessageBox.Show("Book successfully returned!");
+            LoadLoans();
         }
     }
 }

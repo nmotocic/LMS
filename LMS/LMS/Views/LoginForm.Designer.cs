@@ -117,7 +117,7 @@ namespace LMS.Views
             this.Controls.Add(this.passwordBox);
             this.Name = "LoginForm";
             this.Text = "Form1";
-            
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 

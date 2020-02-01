@@ -13,6 +13,10 @@ namespace LMS.Domain.ViewModels
         public Customer User { get; set; }
         public Book Book { get; set; }
         
+        public string BookTitle { get; set; }
+        public string Username { get; set; }
+        public string Email { get; set; }
+
         public DateTime? ReservationDate { get; set; }
     }
 }

@@ -1,15 +1,6 @@
-﻿using LMS.Domain;
-using LMS.Domain.Models;
-using LMS.Domain.ViewModels;
+﻿using LMS.Domain.ViewModels;
 using LMS.Presenters;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LMS.Views
@@ -30,19 +21,7 @@ namespace LMS.Views
 
         private void BookCatalogForm_Load(object sender, EventArgs e)
         {
-            var bookList = _bookPresenter.ShowBooks();
-
-            foreach (BookViewModel book in bookList.Books) {
-                ListViewItem item = new ListViewItem();
-                item.Text = book.Serial_Number.ToString();            
-                item.SubItems.Add(book.BookTitle);                
-                item.SubItems.Add(book.BookAuthor);                
-                item.SubItems.Add(book.Publisher);                
-                item.SubItems.Add(book.Year_Of_Publishing.ToString());                
-                item.SubItems.Add(book.Genre);                
-                item.SubItems.Add(book.Status.ToString());
-                BookCatalogLV.Items.Add(item); 
-            }
+            LoadBooks();
             
         }
 
@@ -59,8 +38,15 @@ namespace LMS.Views
             {
                 bookId = Convert.ToInt32(selectedItem[0].SubItems[0].Text);
             }
-            _bookPresenter.Loan(bookId, _username);
-            BookCatalogLV.Refresh();
+            var success = _bookPresenter.Loan(bookId, _username);
+            if (success)
+            {
+                MessageBox.Show("Book successfully loaned");
+            }
+            else {
+                MessageBox.Show("Book has been borrowed or reserved!");
+            }
+            LoadBooks();
         }
 
         private void ReserveBtn_Click(object sender, EventArgs e)
@@ -78,6 +64,23 @@ namespace LMS.Views
         {
             this.Hide();
             new ProfileForm(_username).Show();
+        }
+
+        private void LoadBooks() {
+            var bookList = _bookPresenter.ShowBooks();
+
+            foreach (BookViewModel book in bookList.Books)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = book.Serial_Number.ToString();
+                item.SubItems.Add(book.BookTitle);
+                item.SubItems.Add(book.BookAuthor);
+                item.SubItems.Add(book.Publisher);
+                item.SubItems.Add(book.Year_Of_Publishing.ToString());
+                item.SubItems.Add(book.Genre);
+                item.SubItems.Add(book.Status.ToString());
+                BookCatalogLV.Items.Add(item);
+            }
         }
     }
 }
