@@ -18,5 +18,6 @@ namespace LMS.Domain.Repositories
         void Remove(Reservation reservation);
         void CancelReservation(Reservation reservation);
         List<Reservation> GetByUsername(string username);
+        Reservation GetByBookId(int bookId);
     }
 }

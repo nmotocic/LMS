@@ -12,12 +12,14 @@ namespace LMS.Persistence.Repositories
     public class UserRepository :  IUserRepository
     {
         protected static LibraryContext _context = new LibraryContext();
-        private static UserRepository instance;
+        private static UserRepository instance = new UserRepository();
 
         public UserRepository(LibraryContext context)
         {
             _context = context;
         }
+
+        public UserRepository() { }
 
         public static UserRepository getInstance()
         {

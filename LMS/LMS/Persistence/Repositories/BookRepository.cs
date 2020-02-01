@@ -29,11 +29,11 @@ namespace LMS.Persistence.Repositories
             return instance ?? (instance = new BookRepository(_context));
         }
 
-        public void Add(Book newBook)
+        public bool Add(Book newBook)
         {
             _context.Add(newBook);
-            
             _context.SaveChanges();
+            return true;
         }
 
         public void Delete(int bookId)
@@ -70,7 +70,7 @@ namespace LMS.Persistence.Repositories
         {
             var book = _context.Book.AsNoTracking().Where(bk => bk.SerialNumber == id).FirstOrDefault();
             return book;
-        }
+       }
         
 
         public void Update(Book book)

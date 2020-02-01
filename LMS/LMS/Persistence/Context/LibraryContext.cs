@@ -68,7 +68,7 @@ namespace LMS.Persistence.Context
                 entity.Property(e => e.YearOfPublishing).HasColumnName("year_of_publishing");
             });
 
-            modelBuilder.Entity<Loan>(entity =>
+           modelBuilder.Entity<Loan>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
 

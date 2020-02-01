@@ -12,8 +12,9 @@ namespace LMS.Domain.Repositories
     {
         Book GetByID(int id);
         BooksViewModel GetAll();
+        
 
-        void Add(Book newBook);
+        bool Add(Book newBook);
         void Update(Book book);
         void Update(int bookID);
         void Delete(int bookID);

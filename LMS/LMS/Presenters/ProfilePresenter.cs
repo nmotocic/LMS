@@ -97,7 +97,7 @@ namespace LMS.Presenters
             return lmv;
         }
 
-        internal void ReturnBook(int loanId)
+        public void ReturnBook(int loanId)
         {
             var loan = _loanRepository.GetById(loanId);
             _loanRepository.ReturnBook(loan);

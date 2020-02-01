@@ -70,6 +70,10 @@ namespace LMS.Persistence.Repositories
             return _context.Reservation.AsNoTracking().Where(r => r.User.Username.Equals(username)).ToList();
         }
 
+        public Reservation GetByBookId(int bookId) {
+            return _context.Reservation.AsNoTracking().FirstOrDefault(r => r.BookId == bookId);
+        }
+
         public void Remove(Reservation reservation)
         {
             using (var context = new LibraryContext()) {

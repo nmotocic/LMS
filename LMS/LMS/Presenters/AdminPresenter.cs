@@ -34,27 +34,32 @@ namespace LMS.Presenters
             return _reservationRepository.GetAll();
         }
 
-        public void AddBook(Book newBook) {
+        public bool AddBook(Book newBook) {
             _bookRepository.Add(newBook);
+            return true;
         }
 
-        public void EditBook(Book book) {
+        public bool EditBook(Book book) {
             _bookRepository.Update(book);
+            return true;
         }
 
-        public void RemoveBook(Book book) {
+        public bool RemoveBook(Book book) {
             _bookRepository.Delete(book.SerialNumber);
+            return true;
         }
 
-        public void CancelReservation(int reservationID)
+        public bool CancelReservation(int reservationID)
         {
             var reservation = _reservationRepository.GetById(reservationID);
             _reservationRepository.CancelReservation(reservation);
+            return true;
         }
 
-        public void RenewLoan(int loanId) {
+        public bool RenewLoan(int loanId) {
             var loan = _loanRepository.GetById(loanId);
             _loanRepository.RenewLoan(loan);
+            return true;
         }
     }
 }
