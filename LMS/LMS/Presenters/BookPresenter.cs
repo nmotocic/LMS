@@ -25,10 +25,10 @@ namespace LMS.Presenters
             return _bookRepository.Loan(book, username);
         }
 
-        public void Reserve(int bookID, string username)
+        public bool Reserve(int bookID, string username)
         {
             var book = _bookRepository.GetByID(bookID);
-            _bookRepository.Reserve(book, username);
+            return _bookRepository.Reserve(book, username);
 
         }
     }

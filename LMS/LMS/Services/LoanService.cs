@@ -37,21 +37,14 @@ namespace LMS.Services
         //Check in the book
         public void CheckInBook(int bookId)
         {
-            var now = DateTime.Now;
+           
             var book = _bookRepository.GetByID(bookId);
             var list = _loanRepository.GetAll().Loans;
-
-            var currentStatus = list.Where(l => l.Book.Status.Equals("Unavaliable"));
+           
             var loan = _loanRepository.GetByBookId(bookId);
-
-            //TO DO: figure this out
-            if (currentStatus.Any()) {
-
-                return;
-            }
-
+           
             UpdateBookStatus(bookId, "Avaliable");
-            _bookRepository.Update(book);
+            _bookRepository.Update(bookId);
             _loanRepository.Delete(loan);
         }
 
@@ -68,11 +61,11 @@ namespace LMS.Services
                     book.Status = "Unavaliable";
                     break;
             }
+            _bookRepository.Update(book);
 
-            
         }
 
-        public bool CheckOutBook(int bookId,string username)
+        public bool CheckOutBook(int bookId, string username)
         {
             //Is the book borrowed?
             if (IsCheckedOut(bookId)) {
@@ -84,7 +77,7 @@ namespace LMS.Services
             var user = _userRepository.GetByUsername(username);
 
             UpdateBookStatus(bookId, "Unavaliable");
-            _bookRepository.Update(book);
+           
 
             var now = DateTime.Now;
             var loan = new Loan
@@ -98,7 +91,7 @@ namespace LMS.Services
                 ReturnDate = GetDefaultLoanTime(now)
             };
             _loanRepository.Add(loan);
-            //_bookRepository.Update(book);
+           
             return true;
 
         }

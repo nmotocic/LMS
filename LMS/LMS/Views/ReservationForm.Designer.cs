@@ -107,6 +107,7 @@
             this.ReturnBtn.TabIndex = 3;
             this.ReturnBtn.Text = "Return to List";
             this.ReturnBtn.UseVisualStyleBackColor = true;
+            this.ReturnBtn.Click += new System.EventHandler(this.ReturnBtn_Click);
             // 
             // ReservationForm
             // 

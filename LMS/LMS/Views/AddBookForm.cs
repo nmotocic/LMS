@@ -23,7 +23,7 @@ namespace LMS.Views
 
         private void AddBookForm_Load(object sender, EventArgs e)
         {
-
+            statusTB.Text = "Avaliable";
         }
 
         private void addBtn_Click(object sender, EventArgs e)

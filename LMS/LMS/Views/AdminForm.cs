@@ -117,7 +117,14 @@ namespace LMS.Views
 
         private void LoansBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            new LoansForm().Show();
+        }
 
+        private void ReservationsBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ReservationForm().Show();
         }
     }
 }

@@ -45,7 +45,13 @@ namespace LMS.Views
                 loanId = Convert.ToInt32(selectedItem[0].SubItems[0].Text);
             }
             _adminPresenter.RenewLoan(loanId);
-            LoanLV.Refresh();
+            this.Refresh();
+        }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminForm().Show();
         }
     }
 }

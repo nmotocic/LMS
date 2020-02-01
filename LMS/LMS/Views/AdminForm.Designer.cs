@@ -76,6 +76,7 @@
             this.ReservationsBtn.TabIndex = 4;
             this.ReservationsBtn.Text = "See &reservations";
             this.ReservationsBtn.UseVisualStyleBackColor = true;
+            this.ReservationsBtn.Click += new System.EventHandler(this.ReservationsBtn_Click);
             // 
             // BookCatalogLV
             // 

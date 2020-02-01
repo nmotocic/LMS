@@ -25,11 +25,13 @@ namespace LMS.Services
         }
 
         //public ReservationService() { }
-
-       
         
-        public void ReserveBook(int bookID, string username)
+        public bool ReserveBook(int bookID, string username)
         {
+
+            if (isBookUnavaliable(bookID)) {
+                return false;
+            }
             var book = _bookRepository.GetByID(bookID);
             var user = _userRepository.GetByUsername(username);
             UpdateBookStatus(bookID, "Reserved");
@@ -39,11 +41,24 @@ namespace LMS.Services
                 Id = RandomNumber(10000, 100000),
                 BookId = bookID,
                 Book = book,
+                CustomerId = user.Id,
                 User = user,
                 ReservationDate = date
             };
             _reservationRepository.Add(reservation);
-            
+            return true;
+        }
+
+        private bool isBookUnavaliable(int bookID)
+        {
+            var book = _bookRepository.GetByID(bookID);
+            string currentStatus = book.Status;
+
+            if (currentStatus.Equals("Unavaliable") || currentStatus.Equals("Reserved"))
+            {
+                return true;
+            }
+            return false;
         }
 
         private int RandomNumber(int min, int max)

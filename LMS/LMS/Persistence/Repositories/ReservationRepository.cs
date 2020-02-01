@@ -62,7 +62,7 @@ namespace LMS.Persistence.Repositories
 
         public Reservation GetById(int id)
         {
-            return _context.Reservation.AsNoTracking().Where(r => r.Id == id).SingleOrDefault();
+            return _context.Reservation.AsNoTracking().Where(r => r.Id == id).FirstOrDefault();
         }
 
         public List<Reservation> GetByUsername(string username)
@@ -72,8 +72,11 @@ namespace LMS.Persistence.Repositories
 
         public void Remove(Reservation reservation)
         {
-            _context.Reservation.Remove(reservation);
-            _context.SaveChanges();
+            using (var context = new LibraryContext()) {
+                context.Reservation.Remove(reservation);
+                context.SaveChanges();
+            }
+           
         }
 
         

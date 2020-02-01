@@ -46,7 +46,7 @@ namespace LMS.Views
             else {
                 MessageBox.Show("Book has been borrowed or reserved!");
             }
-            LoadBooks();
+            BookCatalogLV.Refresh();
         }
 
         private void ReserveBtn_Click(object sender, EventArgs e)
@@ -57,7 +57,15 @@ namespace LMS.Views
             {
                 bookId = Convert.ToInt32(selectedItem[0].SubItems[0].Text);
             }
-            _bookPresenter.Reserve(bookId, _username);
+             var success = _bookPresenter.Reserve(bookId, _username);
+            if (success)
+            {
+                MessageBox.Show("Book successfully loaned");
+            }
+            else
+            {
+                MessageBox.Show("Book has been borrowed or reserved!");
+            }
         }
 
         private void ProfileBtn_Click(object sender, EventArgs e)

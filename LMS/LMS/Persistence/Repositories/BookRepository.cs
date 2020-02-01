@@ -40,8 +40,11 @@ namespace LMS.Persistence.Repositories
         {
             var book = GetByID(bookId);
             
-            _context.Remove(book);
-            _context.SaveChanges();
+            using ( var context = new LibraryContext()) {
+                context.Remove(book);
+                context.SaveChanges();
+            }
+           
         }
 
         public BooksViewModel GetAll()
@@ -65,7 +68,7 @@ namespace LMS.Persistence.Repositories
         
         public Book GetByID(int id)
         {
-            var book = _context.Book.AsNoTracking().Where(bk => bk.SerialNumber == id).SingleOrDefault();
+            var book = _context.Book.AsNoTracking().Where(bk => bk.SerialNumber == id).FirstOrDefault();
             return book;
         }
         
@@ -76,14 +79,27 @@ namespace LMS.Persistence.Repositories
                 MessageBox.Show("Book can't be updated!");
             }
 
-            bool checkID = _context.Book.Any(b => b.SerialNumber == book.SerialNumber);
-            if (!checkID) {
-                MessageBox.Show("Book can't be updated!");
+            using (var context = new LibraryContext()) {
+                /*
+                var local = _context.Book.Local.FirstOrDefault(b => b.SerialNumber == book.SerialNumber);
+                if (local != null)
+                {
+                    _context.Entry(book).State = EntityState.Detached;
+                }
+                */
+                /*
+                bool checkID = _context.Book.AsNoTracking().Any(b => b.SerialNumber == book.SerialNumber);
+                if (!checkID) {
+                    MessageBox.Show("Book can't be updated!");
+                }
+                */
+
+                //_context.Entry(book).State = EntityState.Modified;
+                context.Book.Update(book);
+                context.SaveChanges();
             }
-            _context.Update(book);
-            _context.Entry(book).State = EntityState.Modified;
-           
-            _context.SaveChanges();
+
+                
         }
 
         public void Update(int bookID)
@@ -98,9 +114,9 @@ namespace LMS.Persistence.Repositories
 
         }
 
-        public void Reserve(Book book, string username) {
+        public bool Reserve(Book book, string username) {
             ReservationService reservationService = new ReservationService();
-            reservationService.ReserveBook(book.SerialNumber, username);
+            return reservationService.ReserveBook(book.SerialNumber, username);
         }
 
        

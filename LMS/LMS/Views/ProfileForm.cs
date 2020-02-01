@@ -84,7 +84,7 @@ namespace LMS.Views
             }
             profilePresenter.CancelReservation(reservationID);
             MessageBox.Show("Reservation successfully cancelled!");
-            LoadReservations();
+            this.Refresh();
         }
 
         private void renewLoanBtn_Click(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace LMS.Views
             }
             profilePresenter.RenewLoan(loanId);
             MessageBox.Show("Loan successfully renewed!");
-            LoanListView.Refresh();
+            this.Refresh();
         }
 
         private void returnBtn_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace LMS.Views
             }
             profilePresenter.ReturnBook(loanId);
             MessageBox.Show("Book successfully returned!");
-            LoadLoans();
+            this.Refresh();
         }
     }
 }

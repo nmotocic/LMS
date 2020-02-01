@@ -46,8 +46,13 @@ namespace LMS.Views
                 reservationID = Convert.ToInt32(selectedItem[0].SubItems[0].Text);
             }
             _adminPresenter.CancelReservation(reservationID);
+            this.Refresh();
         }
 
-        
+        private void ReturnBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminForm().Show();
+        }
     }
 }
