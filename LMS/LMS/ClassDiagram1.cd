@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LMS.Domain.Models.Book" Collapsed="true">
+    <Position X="7.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgIEAAAAAEAAmAIAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Models\Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Domain.Models.Customer" Collapsed="true">
+    <Position X="9" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAgAAACAAAAAAEQAAAAQABAAAAAACAAAAIAAAAAA=</HashCode>
+      <FileName>Domain\Models\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Domain.Models.Loan" Collapsed="true">
+    <Position X="3.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAADCAAAAAQAAABAAAAAAAAAQAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Models\Loan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Domain.Models.Reservation" Collapsed="true">
+    <Position X="2" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADCAAAgAAAAABAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Models\Reservation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Domain.ViewModels.BooksViewModel" Collapsed="true">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\ViewModels\BooksViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Domain.ViewModels.BookViewModel" Collapsed="true">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAACAIAAAEAAAAAQAAAAAAAAIABAAA=</HashCode>
+      <FileName>Domain\ViewModels\BookViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Domain.ViewModels.LoansViewModel" Collapsed="true">
+    <Position X="10.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Domain\ViewModels\LoansViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Domain.ViewModels.LoanViewModel" Collapsed="true">
+    <Position X="2" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAABAAAAACAAAABAAQAQAAAAQAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\ViewModels\LoanViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Domain.ViewModels.ReservationsViewModel" Collapsed="true">
+    <Position X="9" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\ViewModels\ReservationsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Domain.ViewModels.ReservationViewModel" Collapsed="true">
+    <Position X="10.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAAAgCAAAABAAQAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\ViewModels\ReservationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Domain.ViewModels.UsersViewModel" Collapsed="true">
+    <Position X="9" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\ViewModels\UsersViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Domain.ViewModels.UserViewModel" Collapsed="true">
+    <Position X="10.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgACAAAAAAAQAAAAQABAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Domain\ViewModels\UserViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Persistence.Context.LibraryContext" Collapsed="true">
+    <Position X="2" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAgAAAQAQAABAEAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Persistence\Context\LibraryContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Persistence.Repositories.BookRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAgAAAAAABAAAAAAAAAAAAAFAAAQAAgACgAAAAAA=</HashCode>
+      <FileName>Persistence\Repositories\BookRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LMS.Persistence.Repositories.LoanRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAARBAAAAAAAAAACAAFACAQAAgAAAAAAAIA=</HashCode>
+      <FileName>Persistence\Repositories\LoanRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LMS.Persistence.Repositories.ReservationRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAABBAABAAAABAACAABAAAQAAgAAAAAAAIA=</HashCode>
+      <FileName>Persistence\Repositories\ReservationRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LMS.Persistence.Repositories.UserRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAABAAAAAAAAAACAAFAAAQAAgAAgAAAAAA=</HashCode>
+      <FileName>Persistence\Repositories\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LMS.Presenters.AdminPresenter" Collapsed="true">
+    <Position X="5.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAEAAAAABACAAIAAAAAAACAAABAAEAAAAIMA=</HashCode>
+      <FileName>Presenters\AdminPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Presenters.BookPresenter" Collapsed="true">
+    <Position X="10.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAEA=</HashCode>
+      <FileName>Presenters\BookPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Presenters.ProfilePresenter" Collapsed="true">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACQAAgAEQQAAABAAAAAAAAAAAACAAABAAAAAAAIIA=</HashCode>
+      <FileName>Presenters\ProfilePresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Program" Collapsed="true">
+    <Position X="9" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Properties.Resources" Collapsed="true">
+    <Position X="2" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Properties.Settings" Collapsed="true">
+    <Position X="3.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Services.BookService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAQAAAAAAAACAAAAAkAAAAAAAAAgAAAEAAAAA=</HashCode>
+      <FileName>Services\BookService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LMS.Services.LoanService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgAgAAAAAAAEABAAAAAAAACAAABABCAAACAAQ=</HashCode>
+      <FileName>Services\LoanService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LMS.Services.ReservationService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgAAAAAAABAAAAgAAAAAAAAAAAAAAAgAACAIQ=</HashCode>
+      <FileName>Services\ReservationService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LMS.Services.UserService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAABAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\UserService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LMS.Views.AddBookForm" Collapsed="true">
+    <Position X="2" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACACCCAACBEAAICJAEACAACAAAAAAIAAAABQAAA=</HashCode>
+      <FileName>Views\AddBookForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Views.AdminForm" Collapsed="true">
+    <Position X="3.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAgCAQAEAAAADAAACCAARAAAAEMAAAAAgQAIA=</HashCode>
+      <FileName>Views\AdminForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Views.BookCatalogForm" Collapsed="true">
+    <Position X="9" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAGAAEAiAQQEEAiAKAAAACAhAAAAAAAAIACACAABA=</HashCode>
+      <FileName>Views\BookCatalogForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Views.EditBookForm" Collapsed="true">
+    <Position X="10.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAACECCCAgCBAAAICBAAACABAAAAAAAAAAAFASAQA=</HashCode>
+      <FileName>Views\EditBookForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Views.LoansForm" Collapsed="true">
+    <Position X="9" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAACAAABAgBACAAAACAAAIAAAAIEgAEGAAIQA=</HashCode>
+      <FileName>Views\LoansForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Views.LoginForm" Collapsed="true">
+    <Position X="3.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABACAAABAAAQCAAAACAAQYAAACgGAAAAQAAAA=</HashCode>
+      <FileName>Views\LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Views.ProfileForm" Collapsed="true">
+    <Position X="5.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIGEAAahICEANBAgBAiQQAUiDwAQDAkABkAAQEQABAg=</HashCode>
+      <FileName>Views\ProfileForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Views.RegisterForm" Collapsed="true">
+    <Position X="10.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAIQAACBQABgAAACAAQASAAQIAAAQgEAAAABAAAQ=</HashCode>
+      <FileName>Views\RegisterForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMS.Views.ReservationForm" Collapsed="true">
+    <Position X="3.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAQACAAAAAgAACAAAQCAABAAAAgIEAAEMAgAQA=</HashCode>
+      <FileName>Views\ReservationForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="LMS.Domain.Repositories.IBookRepository" Collapsed="true">
+    <Position X="2" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAgAAAAAAAAAAAAAAAAAAAAEAAAAAAgACgAAAAAA=</HashCode>
+      <FileName>Domain\Repositories\IBookRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LMS.Domain.Repositories.ILoanRepository" Collapsed="true">
+    <Position X="5.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAARAAAAAAAAAAACAAEACAAAAgAAAAAAAIA=</HashCode>
+      <FileName>Domain\Repositories\ILoanRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LMS.Domain.Repositories.IReservationRepository" Collapsed="true">
+    <Position X="9" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAABAAABAAAABAACAAAAAAAAAgAAAAAAAIA=</HashCode>
+      <FileName>Domain\Repositories\IReservationRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LMS.Domain.Repositories.IUserRepository" Collapsed="true">
+    <Position X="2" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAAAAAAAAAACAAEAAAAAAgAAgAAAAAA=</HashCode>
+      <FileName>Domain\Repositories\IUserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LMS.Domain.Services.IBookService" Collapsed="true">
+    <Position X="3.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAQAAAAAAAACAAAAAkAAAAAAAAAgAAAEAAAAA=</HashCode>
+      <FileName>Domain\Services\IBookService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LMS.Domain.Services.ILoanService" Collapsed="true">
+    <Position X="7.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAEABAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Services\ILoanService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LMS.Domain.Services.IReservationService" Collapsed="true">
+    <Position X="10.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Services\IReservationService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LMS.Domain.Services.IUserService" Collapsed="true">
+    <Position X="3.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Services\IUserService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

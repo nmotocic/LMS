@@ -271,6 +271,7 @@
     <EmbeddedResource Include="Views\ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <EntityDeploy Include="Persistence\LibraryModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
