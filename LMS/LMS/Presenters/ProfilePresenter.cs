@@ -97,10 +97,11 @@ namespace LMS.Presenters
             return lmv;
         }
 
-        public void ReturnBook(int loanId)
+        public bool ReturnBook(int loanId)
         {
             var loan = _loanRepository.GetById(loanId);
-            _loanRepository.ReturnBook(loan);
+            
+            return _loanRepository.ReturnBook(loan); ;
         }
     }
 }

@@ -20,6 +20,6 @@ namespace LMS.Domain.Repositories
         void RenewLoan(Loan loan);
         Loan GetByBookId(int bookId);
         List<Loan> GetByUsername(string username);
-        void ReturnBook(Loan loan);
+        bool ReturnBook(Loan loan);
     }
 }

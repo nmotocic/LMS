@@ -79,11 +79,14 @@ namespace LMS.Presenters.Tests
             var successfullAdd = adminController.AddBook(loanBook);
 
             bookController.Loan(loanBook.SerialNumber, user.Username);
-            var loan = loanRepository.GetByBookId(loanBook.SerialNumber);
-            if (loan != null) {
+           
+            var book = bookRepository.GetByID(loanBook.SerialNumber);
+
+            if (book.Status.Equals("Unavaliable")) {
                 success = true;
-                var successfulDelete = adminController.RemoveBook(loanBook);
+                
             }
+            var successfulDelete = adminController.RemoveBook(loanBook);
             Assert.IsTrue(success);
             
         }
@@ -98,23 +101,19 @@ namespace LMS.Presenters.Tests
             var successfullAdd = adminController.AddBook(reservationBook);
 
             bookController.Reserve(reservationBook.SerialNumber, user.Username);
-            var reservation = reservationRepository.GetByBookId(reservationBook.SerialNumber);
+            var book = bookRepository.GetByID(reservationBook.SerialNumber);
 
-            if (reservation != null)
+            if (book.Status.Equals("Reserved"))
             {
                 success = true;
-                var successfulDelete = adminController.RemoveBook(reservationBook);
+                
             }
+            var successfulDelete = adminController.RemoveBook(reservationBook);
             Assert.IsTrue(success);
 
             
         }
 
-        [TestMethod()]
-        public void ReturnBookTest()
-        {
-            var success = true;
-            Assert.IsTrue(success);
-        }
+        
     }
 }

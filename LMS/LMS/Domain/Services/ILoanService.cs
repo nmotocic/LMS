@@ -10,7 +10,7 @@ namespace LMS.Domain.Services
     public interface ILoanService
     {
         IEnumerable<LoanViewModel> ListAll();
-        void CheckInBook(int bookId);
+        bool CheckInBook(int bookId);
         bool CheckOutBook(int bookId, string username);
 
         void RenewLoan(int loanID);

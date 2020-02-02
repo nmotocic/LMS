@@ -41,8 +41,11 @@ namespace LMS.Persistence.Repositories
 
         public void Delete(Loan loan)
         {
-            _context.Loan.Remove(loan);
-            _context.SaveChanges(); 
+            using (var context = new LibraryContext()) {
+                context.Loan.Remove(loan);
+                context.SaveChanges();
+
+            }
         }
 
         public LoansViewModel GetAll()
@@ -87,16 +90,20 @@ namespace LMS.Persistence.Repositories
             loanService.RenewLoan(loan.Id);
         }
 
-        public void ReturnBook(Loan loan)
+        public bool ReturnBook(Loan loan)
         {
             LoanService loanService = new LoanService();
-            loanService.CheckInBook(loan.BookId);
+           
+            return loanService.CheckInBook(loan.BookId); ;
         }
 
         public void Update(Loan loan)
         {
-            _context.Loan.Update(loan);
-            _context.SaveChanges();
+            using (var context = new LibraryContext()) {
+                context.Loan.Update(loan);
+                context.SaveChanges();
+            }
+               
         }
         
     }

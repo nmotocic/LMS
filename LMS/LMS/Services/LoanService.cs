@@ -35,17 +35,22 @@ namespace LMS.Services
         }
 
         //Check in the book
-        public void CheckInBook(int bookId)
+        public bool CheckInBook(int bookId)
         {
            
             var book = _bookRepository.GetByID(bookId);
             var list = _loanRepository.GetAll().Loans;
            
             var loan = _loanRepository.GetByBookId(bookId);
+
+            if (loan == null) {
+                return false;
+            }
            
             UpdateBookStatus(bookId, "Avaliable");
             _bookRepository.Update(bookId);
             _loanRepository.Delete(loan);
+            return true;
         }
 
         private void UpdateBookStatus(int bookId, string newStatus)
